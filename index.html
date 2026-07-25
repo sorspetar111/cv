@@ -1467,7 +1467,7 @@
                 const sectorTags = job.sectors.map((s, i) => `<span class="sector-tag ${job.sectorClasses[i]}">${s}</span>`).join('');
 
                 const html = `
-                    <div class="employment-card" data-sectors="${job.sectors.map(s => s.toLowerCase()).join(',')}">
+                    <div class="employment-card${job.freelance ? ' freelance' : ''}" data-sectors="${job.sectors.map(s => s.toLowerCase()).join(',')}">
                         <div class="emp-header">
                             <div>
                                 <div class="emp-company">${job.company}</div>
