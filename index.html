@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.html" />
+    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petar Evgeniev — Fullstack Developer CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --dark: #0f172a;
+            --darker: #020617;
+            --card-bg: #ffffff;
+            --body-bg: #f1f5f9;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gradient-1: #2563eb;
+            --gradient-2: #7c3aed;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--body-bg);
+            color: #334155;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #1e1b4b 100%);
+            color: white;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        .contact-chip:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-chip i { color: var(--accent); font-size: 1rem; }
+
+        /* Section styling */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+        }
+
+        /* Skills */
+        .skill-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 15px;
+        }
+
+        .skill-name {
+            min-width: 180px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .skill-bar-wrap {
+            flex: 1;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+        }
+
+        .skill-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+            border-radius: 0 10px 10px 0;
+        }
+
+        .skill-years {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        /* Filter Buttons */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.1);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+        }
+
+        .filter-btn .badge-count {
+            background: rgba(255,255,255,0.25);
+            color: inherit;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .filter-btn.active .badge-count {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Employment Cards */
+        .employment-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+.employment-card.govertment {
+    border-left-color: var(--warning);
+}
+
+
+.employment-card.freelance {
+    border-left-color: #f59e0b !important;
+}
+		
+        .employment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37,99,235,0.02), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .employment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .employment-card:hover::before { opacity: 1; }
+
+        .employment-card.hidden-card {
+            display: none;
+        }
+
+        .emp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emp-company {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .emp-date {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: var(--primary);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .emp-role {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emp-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .emp-sector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sector-tag {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .sector-tag.oil { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; }
+        .sector-tag.financial { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #166534; }
+        .sector-tag.health { background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #9d174d; }
+        .sector-tag.cyber { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; }
+        .sector-tag.retail { background: linear-gradient(135deg, #ccfbf1, #99f6e4); color: #115e59; }
+        .sector-tag.government { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
+        .sector-tag.hardware { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; }
+        .sector-tag.nuclear { background: linear-gradient(135deg, #ecfccb, #d9f99d); color: #3f6212; }
+
+        /* Achievement Cards */
+        .achievement-card {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gradient-1), var(--gradient-2));
+        }
+
+        .ach-client {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .ach-role {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .ach-desc {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Summary tags */
+        .expertise-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37,99,235,0.1);
+        }
+
+        .expertise-tag i { color: var(--accent); }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        /* Cloud Experience Chips */
+        .cloud-chip {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            background: white;
+            border: 1.5px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.25s ease;
+            cursor: default;
+            min-width: 130px;
+        }
+
+        .cloud-chip i {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .cloud-chip span {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.82rem;
+        }
+
+        .cloud-chip small {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: #94a3b8;
+            line-height: 1.2;
+        }
+
+        .cloud-chip:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(37,99,235,0.10);
+            transform: translateY(-2px);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+
+   /* ===== CLOUD EXPERIENCE SECTION ===== */
+        .cloud-provider-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 4px;
+        }
+        .cloud-provider-tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+        }
+        .cloud-provider-tab.active-azure {
+            background: linear-gradient(135deg, #0078d4, #005a9e);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0,120,212,0.35);
+        }
+        .cloud-provider-tab.active-google {
+            background: linear-gradient(135deg, #4285f4, #0f9d58);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(66,133,244,0.35);
+        }
+        .cloud-panel { display: none; }
+        .cloud-panel.active { display: block; }
+
+        .cloud-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .cloud-service-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cloud-service-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 3px; height: 100%;
+            border-radius: 3px 0 0 3px;
+        }
+        .cloud-service-card.azure-card::before { background: linear-gradient(180deg, #0078d4, #50e6ff); }
+        .cloud-service-card.google-card::before { background: linear-gradient(180deg, #4285f4, #0f9d58); }
+
+        .cloud-service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+            background: white;
+        }
+
+        .cloud-icon-wrap {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        .azure-icon { background: linear-gradient(135deg, #e8f4fd, #c7e3f8); color: #0078d4; }
+        .google-icon { background: linear-gradient(135deg, #e8f0fe, #d2e3fc); color: #4285f4; }
+
+        .cloud-service-info { flex: 1; min-width: 0; }
+        .cloud-service-name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .cloud-service-desc {
+            font-size: 0.8rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .cloud-service-tag {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+        .tag-storage   { background: #eff6ff; color: #1d4ed8; }
+        .tag-database  { background: #f0fdf4; color: #166534; }
+        .tag-ai        { background: #fdf4ff; color: #7e22ce; }
+        .tag-network   { background: #fff7ed; color: #9a3412; }
+        .tag-messaging { background: #fefce8; color: #854d0e; }
+        .tag-devops    { background: #f0f9ff; color: #0369a1; }
+        .tag-maps      { background: #ecfdf5; color: #065f46; }
+        .tag-security  { background: #fef2f2; color: #991b1b; }
+        .tag-sdk       { background: #f5f3ff; color: #5b21b6; }
+
+
+
+
+
+        /* ===== YOUTUBE MODAL ===== */
+        .page-blur {
+            filter: blur(8px);
+            transition: filter 0.4s ease;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .yt-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(4px);
+            z-index: 9998;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .yt-modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .yt-modal-box {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 9999;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            overflow: hidden;
+        }
+
+        .yt-modal-overlay.show .yt-modal-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .yt-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .yt-modal-title {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .yt-modal-title i {
+            color: #ff0000;
+            font-size: 1.4rem;
+        }
+
+        .yt-modal-close {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .yt-modal-close:hover {
+            background: rgba(239,68,68,0.2);
+            color: #ef4444;
+            border-color: rgba(239,68,68,0.3);
+        }
+
+        .yt-modal-body {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .yt-modal-body iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .yt-modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .yt-fallback-msg {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .yt-open-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .yt-open-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220,38,38,0.4);
+            color: white;
+        }
+
+        .yt-cert-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            margin: 4px;
+            text-decoration: none;
+        }
+
+        .yt-cert-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220,38,38,0.4);
+            color: white;
+        }
+
+        .yt-cert-btn i { font-size: 1.1rem; }
+
+        /* ===== IMAGE / CERTIFICATE MODAL ===== */
+        .cert-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            margin: 4px;
+            text-decoration: none;
+        }
+
+        .cert-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            color: white;
+        }
+
+        .cert-btn i { font-size: 1.1rem; }
+
+        .img-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 9998;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .img-modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .img-modal-box {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border-radius: 20px;
+            width: auto;
+            max-width: 95vw;
+            max-height: 90vh;
+            position: relative;
+            z-index: 9999;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-modal-overlay.show .img-modal-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .img-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            flex-shrink: 0;
+        }
+
+        .img-modal-title {
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .img-modal-title i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .img-modal-close {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .img-modal-close:hover {
+            background: rgba(239,68,68,0.2);
+            color: #ef4444;
+            border-color: rgba(239,68,68,0.3);
+        }
+
+        .img-modal-body {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .img-modal-body img {
+            max-width: 100%;
+            max-height: 75vh;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.06);
+            object-fit: contain;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+        @media (max-width: 768px) {
+            .hero { padding: 50px 0 70px; }
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .skill-name { min-width: 120px; font-size: 0.8rem; }
+            .section-card { padding: 20px; }
+            .emp-header { flex-direction: column; }
+            .filter-btn { font-size: 0.8rem; padding: 6px 14px; }
+            .yt-modal-box { border-radius: 14px; }
+            .yt-modal-header { padding: 14px 18px; }
+            .yt-modal-footer { padding: 12px 18px; flex-direction: column; align-items: stretch; }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 1.6rem; }
+            .contact-chip { font-size: 0.8rem; padding: 8px 14px; }
+            .skill-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .skill-bar-wrap { width: 100%; }
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 50px 20px;
+            color: #94a3b8;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Counter badge */
+        .results-counter {
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Hero Header -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>EVGENIEV, PETAR</h1>
+                    <p class="subtitle">Fullstack Developer</p>
+                    <div class="mt-4">
+                        <a href="mailto:sorspet+jobs@gmail.com" class="contact-chip">
+                            <i class="bi bi-envelope-fill"></i> sorspet+jobs@gmail.com
+                        </a>
+                        <a href="tel:+359885629652" class="contact-chip">
+                            <i class="bi bi-telephone-fill"></i> +359 885 629 652
+                        </a>
+                        <span class="contact-chip">
+                            <i class="bi bi-geo-alt-fill"></i> Yambol, Bulgaria, EU
+                        </span>
+                        <a href="https://github.com/sorspetar111" target="_blank" class="contact-chip">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <button class="yt-cert-btn" onclick="openYtModal('-Dvf4h7NZLM', 'Certificate 1')">
+                            <i class="bi bi-youtube"></i> Certificate 1
+                        </button>
+                        <button class="yt-cert-btn" onclick="openYtModal('enQIcf8t6s0', 'Certificate 2')">
+                            <i class="bi bi-youtube"></i> Certificate 2
+                        </button>
+                        <button class="cert-btn" onclick="openImgModal('assets/C%23%20Assessment%202017.png', 'C# Assessment 2017')">
+                            <i class="bi bi-file-earmark-image"></i> C# Assessment 2017
+                        </button>
+                        <button class="cert-btn" onclick="openImgModal('assets/CSharp%20Assessment%202024.png', 'CSharp Assessment 2024')">
+                            <i class="bi bi-file-earmark-image"></i> C# Assessment 2024
+                        </button>
+                        <button class="cert-btn" onclick="openImgModal('assets/Plursite.jpg', 'Pluralsight')">
+                            <i class="bi bi-file-earmark-image"></i> Pluralsight
+                        </button>
+                        <button class="cert-btn" onclick="openImgModal('assets/WPF%20Certificate%202015.png', 'WPF Certificate 2015')">
+                            <i class="bi bi-file-earmark-image"></i> WPF Certificate 2015
+                        </button>
+                        <button class="cert-btn" onclick="openImgModal('assets/Testdome%20Assessment%202024.png', 'Testdome Assessment 2024')">
+                            <i class="bi bi-file-earmark-image"></i> Testdome Assessment 2024
+                        </button>
+                    </div>
+                </div>
+                <!--
+                <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-end">
+                    <div style="width: 150px; height: 150px; background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(124,58,237,0.2)); border-radius: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.1);">
+                        <i class="bi bi-code-square" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Modal -->
+    <div class="yt-modal-overlay" id="ytModalOverlay" onclick="closeYtModal(event)">
+        <div class="yt-modal-box" onclick="event.stopPropagation()">
+            <div class="yt-modal-header">
+                <div class="yt-modal-title">
+                    <i class="bi bi-youtube"></i>
+                    <span id="ytModalLabel">Certificate Video</span>
+                </div>
+                <button class="yt-modal-close" onclick="closeYtModal()" title="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="yt-modal-body">
+                <iframe id="ytIframe" src=""  frameborder="0" 
+											  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+											  referrerpolicy="strict-origin-when-cross-origin" 
+											  allowfullscreen >
+				</iframe>
+            </div>
+            <div class="yt-modal-footer">
+                <span class="yt-fallback-msg"><i class="bi bi-info-circle"></i> If the video does not load, click below to watch on YouTube.</span>
+                <a id="ytOpenLink" href="#" target="_blank" class="yt-open-link">
+                    <i class="bi bi-box-arrow-up-right"></i> Watch on YouTube
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="img-modal-overlay" id="imgModalOverlay" onclick="closeImgModal(event)">
+        <div class="img-modal-box" onclick="event.stopPropagation()">
+            <div class="img-modal-header">
+                <div class="img-modal-title">
+                    <i class="bi bi-image"></i>
+                    <span id="imgModalLabel">Certificate</span>
+                </div>
+                <button class="img-modal-close" onclick="closeImgModal()" title="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="img-modal-body">
+                <img id="imgModalImage" src="" alt="Certificate">
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: -40px; position: relative; z-index: 10;">
+
+        <!-- Education -->
+        <div class="section-card fade-in stagger-1">
+            <h2 class="section-title"><i class="bi bi-mortarboard-fill"></i> Education</h2>
+            <div class="d-flex flex-wrap gap-4">
+                <div>
+                    <div style="font-weight: 700; color: var(--dark);">University: "Chernorizets Hrabar", Varna city, Bulgaria </div>
+                    <div style="color: var(--secondary); font-size: 0.9rem;">Bachelor of Information Systems Science (AISA) · 2000 – 2005</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section-card fade-in stagger-2">
+            <h2 class="section-title"><i class="bi bi-tools"></i> Technical Skills</h2>
+            <div id="skills-container"></div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section-card fade-in stagger-3">
+            <h2 class="section-title"><i class="bi bi-trophy-fill"></i> Key Achievements</h2>
+            <div id="achievements-container"></div>
+        </div>
+
+        <!-- Employment History with Filter -->
+        <div class="section-card fade-in stagger-4">
+            <h2 class="section-title"><i class="bi bi-briefcase-fill"></i> Employment History</h2>
+
+            <!-- Sector Filter -->
+            <div class="filter-container" id="sector-filters">
+                <button class="filter-btn active" data-sector="all">
+                    <i class="bi bi-grid-fill"></i> All Sectors
+                    <span class="badge-count" id="count-all">0</span>
+                </button>
+            </div>
+
+            <div class="results-counter" id="results-counter">
+                <i class="bi bi-list-ul"></i> Showing <span id="showing-count">0</span> of <span id="total-count">0</span> positions
+            </div>
+
+            <div id="employment-container"></div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="bi bi-search"></i>
+                <h4>No positions found</h4>
+                <p>Try selecting a different sector filter.</p>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section-card fade-in stagger-5">
+            <h2 class="section-title"><i class="bi bi-bullseye"></i> Summary of Expertise</h2>
+            <div class="text-center">
+                <span class="expertise-tag"><i class="bi bi-graph-up-arrow"></i> Financial Applications</span>
+                <span class="expertise-tag"><i class="bi bi-cpu"></i> IoT Development</span>
+                <span class="expertise-tag"><i class="bi bi-droplet-fill"></i> Oil Sector</span>
+                <span class="expertise-tag"><i class="bi bi-heart-pulse-fill"></i> Medical Sector</span>
+                <span class="expertise-tag"><i class="bi bi-building"></i> Government Projects</span>
+            </div>
+			
+<!-- 
+            <div class="mt-4 pt-4" style="border-top: 1px solid #e2e8f0;">
+                <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Primary Skills</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.8;">
+                    React Native, ReactJS, Delphi, C#, HTML, CSS, JavaScript, jQuery, Bootstrap, Angular 16, 
+                    C# ASP.NET WebForms/MVC/Core, WPF, Silverlight, WinForms, LINQ, TSQL, WCF, Entity Framework, 
+                    Fluent API, Ado.NET, WebAPI, .Net 6/8/10, Java Kotlin, Microservices, NServiceBus, MassTransit, 
+                    Ocelot API Gateway, Hangfire, Docker, MSSQL, Redis, NoSQL, Elasticsearch, ESXi, CI/CD Automation 
+                    (GitLab CE, Azure DevOps, Azure Kubernetes Service), TFS, GIT, GitLab, Azure, SVN, VSS
+                </p>
+            </div>
+-->
+			
+<div class="mt-4 pt-4" style="border-top: 1px solid #e2e8f0;">
+    <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Primary Skills</h5>
+    <div id="skills-wordcloud"></div>
+</div>
+
+			
+		</div>
+
+        <!-- Industry Network -->
+        <div class="section-card fade-in stagger-5" style="margin-bottom: 30px;">
+            <h2 class="section-title"><i class="bi bi-diagram-3-fill"></i> Industry Network</h2>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 14px;">
+                Global collaborations from Key Achievements — grouped by sector. Drag nodes · scroll to zoom · pan the canvas.
+            </p>
+            <!-- Legend -->
+            <div id="network-legend" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>
+            <!-- Graph -->
+            <div id="network-graph" style="
+                background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+                border-radius: 16px;
+                border: 1px solid #e2e8f0;
+                overflow: hidden;
+                position: relative;
+            ">
+                <svg id="network-svg" style="display:block; width:100%;"></svg>
+                <!-- Tooltip -->
+                <div id="network-tooltip" style="
+                    position: absolute;
+                    background: #0f172a;
+                    color: #f1f5f9;
+                    padding: 10px 15px;
+                    border-radius: 12px;
+                    font-size: 0.82rem;
+                    font-family: Inter, sans-serif;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.15s;
+                    max-width: 240px;
+                    line-height: 1.6;
+                    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+                    border: 1px solid rgba(255,255,255,0.08);
+                    z-index: 200;
+                "></div>
+            </div>
+        </div>
+
+        <!-- Cloud Experience Section -->
+        <div class="section-card fade-in stagger-4 mt-4">
+            <h2 class="section-title">
+                <i class="bi bi-cloud-fill"></i>
+                Cloud &amp; Platform Experience
+            </h2>
+            
+              <!-- Provider tabs -->
+              <!--
+      <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+      
+  <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor"/>
+          </svg>
+          Microsoft Azure
+        </button>
+        
+        <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
+          <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4"/>
+            <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853"/>
+            <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05"/>
+            <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335"/>
+          </svg>
+          Google Cloud &amp; APIs
+        </button>
+        
+      </div>
+-->
+
+            <!-- Azure -->
+            <div class="mb-4">
+               
+<!--
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+                    <div style="background:linear-gradient(135deg,#0078d4,#005a9e); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="bi bi-microsoft" style="color:white; font-size:1.1rem;"></i>
+                    </div>
+                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Microsoft Azure</span>
+                </div>
+    -->            
+                   <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+      
+  <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor"/>
+          </svg>
+          Microsoft Azure
+        </button>
+        
+      
+        
+      </div>
+                
+                
+                
+                
+                <div style="display:flex; flex-wrap:wrap; gap:10px;">
+
+                    <div class="cloud-chip" title="Azure Blob Storage — Raw file formats for backup, similar to cloud object storage">
+                        <i class="bi bi-archive-fill" style="color:#0078d4;"></i>
+                        <span>Blob Storage</span>
+                        <small>Backup / Object Store</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Cosmos DB — NoSQL with Entity Framework Core">
+                        <i class="bi bi-database-fill" style="color:#0078d4;"></i>
+                        <span>Cosmos DB</span>
+                        <small>NoSQL · EF Core</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure SQL Database — Microsoft SQL relational database">
+                        <i class="bi bi-server" style="color:#0078d4;"></i>
+                        <span>Azure SQL</span>
+                        <small>MSSQL Relational</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Database for PostgreSQL">
+                        <i class="bi bi-server" style="color:#336791;"></i>
+                        <span>PostgreSQL</span>
+                        <small>Managed PG DB</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure AI Search — Similar to ElasticSearch + Kibana">
+                        <i class="bi bi-search" style="color:#0078d4;"></i>
+                        <span>AI Search</span>
+                        <small>≈ Elastic + Kibana</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Service Bus — Message queue broker">
+                        <i class="bi bi-diagram-3-fill" style="color:#0078d4;"></i>
+                        <span>Service Bus</span>
+                        <small>Message Queue</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Redis Cache on Azure — Distributed in-memory cache">
+                        <i class="bi bi-lightning-charge-fill" style="color:#d82c20;"></i>
+                        <span>Redis Cache</span>
+                        <small>Distributed Cache</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Application Gateway — HTTP load balancing &amp; reverse proxy, closest Azure-native equivalent to Ocelot/YARP">
+                        <i class="bi bi-shuffle" style="color:#0078d4;"></i>
+                        <span>Application Gateway</span>
+                        <small>LB · Reverse Proxy</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure API Management (APIM) — API routing and management">
+                        <i class="bi bi-gear-wide-connected" style="color:#0078d4;"></i>
+                        <span>API Management</span>
+                        <small>APIM · Routing</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure AI Speech — Speech-to-Text, native Azure Cognitive/AI service">
+                        <i class="bi bi-mic-fill" style="color:#0078d4;"></i>
+                        <span>AI Speech</span>
+                        <small>Speech-to-Text</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure AI Translator — AI-powered language translation service">
+                        <i class="bi bi-translate" style="color:#0078d4;"></i>
+                        <span>AI Translator</span>
+                        <small>Language Translation</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Maps / Bing Maps API — Geospatial and mapping services">
+                        <i class="bi bi-map-fill" style="color:#0078d4;"></i>
+                        <span>Azure Maps</span>
+                        <small>Bing Maps API</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure Git — Source control via Azure DevOps Repos">
+                        <i class="bi bi-git" style="color:#0078d4;"></i>
+                        <span>Azure Git</span>
+                        <small>DevOps Repos</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Azure TFS — Team Foundation Server / Azure Boards">
+                        <i class="bi bi-kanban-fill" style="color:#0078d4;"></i>
+                        <span>Azure TFS</span>
+                        <small>Team Foundation</small>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Google -->
+            <div>
+              
+<!--
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+                    <div style="background:linear-gradient(135deg,#4285f4,#34a853); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                        <i class="bi bi-google" style="color:white; font-size:1.1rem;"></i>
+                    </div>
+                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Google Cloud &amp; APIs</span>
+                </div>
+     -->            
+                  <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+      
+
+        
+        <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
+          <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4"/>
+            <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853"/>
+            <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05"/>
+            <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335"/>
+          </svg>
+          Google Cloud &amp; APIs
+        </button>
+        
+      </div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:10px;">
+
+                    <div class="cloud-chip" title="Google Maps SDK — Geospatial mapping integration">
+                        <i class="bi bi-geo-alt-fill" style="color:#ea4335;"></i>
+                        <span>Maps SDK</span>
+                        <small>Geospatial</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Google AI Translation — Neural machine translation API">
+                        <i class="bi bi-translate" style="color:#4285f4;"></i>
+                        <span>AI Translation</span>
+                        <small>Neural MT API</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Google reCAPTCHA — Bot and spam protection">
+                        <i class="bi bi-shield-check" style="color:#34a853;"></i>
+                        <span>reCAPTCHA</span>
+                        <small>Bot Protection</small>
+                    </div>
+
+                    <div class="cloud-chip" title="Google Drive SDK — Cloud file storage and document management">
+                        <i class="bi bi-cloud-arrow-up-fill" style="color:#fbbc05;"></i>
+                        <span>Drive SDK</span>
+                        <small>Cloud File Storage</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center py-5" style="color: #94a3b8; font-size: 0.85rem;">
+            <p>© 2026 Petar Evgeniev · Fullstack Developer · Yambol, Bulgaria</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ===== YOUTUBE MODAL FUNCTIONS =====
+        let currentVideoId = '';
+
+        function openYtModal(videoId, title) {
+            currentVideoId = videoId;
+            $('#ytModalLabel').text(title || 'Certificate Video');
+
+            // Use youtube-nocookie.com for better privacy and fewer restrictions
+            // Add modestbranding and rel=0 for cleaner player ?autoplay=1&mute=1
+            var embedUrl = 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0&modestbranding=1&playsinline=1&mute=1';
+            $('#ytIframe').attr('src', embedUrl);
+
+            // Set fallback direct link
+            $('#ytOpenLink').attr('href', 'https://www.youtube.com/watch?v=' + videoId);
+
+            $('#ytModalOverlay').addClass('show');
+            $('body > *:not(.yt-modal-overlay)').addClass('page-blur');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeYtModal(e) {
+            if (e && e.target !== e.currentTarget && !$(e.target).closest('.yt-modal-close').length && e.type === 'click') return;
+            $('#ytModalOverlay').removeClass('show');
+            $('body > *:not(.yt-modal-overlay)').removeClass('page-blur');
+            document.body.style.overflow = '';
+            setTimeout(function() {
+                $('#ytIframe').attr('src', '');
+                currentVideoId = '';
+            }, 400);
+        }
+
+        // Close on Escape key
+        $(document).on('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeYtModal();
+                closeImgModal();
+            }
+        });
+
+        // ===== IMAGE MODAL FUNCTIONS =====
+        function openImgModal(imgSrc, title) {
+            $('#imgModalLabel').text(title || 'Certificate');
+            $('#imgModalImage').attr('src', imgSrc);
+            $('#imgModalOverlay').addClass('show');
+            $('body > *:not(.yt-modal-overlay):not(.img-modal-overlay)').addClass('page-blur');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImgModal(e) {
+            if (e && e.target !== e.currentTarget && !$(e.target).closest('.img-modal-close').length && e.type === 'click') return;
+            $('#imgModalOverlay').removeClass('show');
+            $('body > *:not(.yt-modal-overlay):not(.img-modal-overlay)').removeClass('page-blur');
+            document.body.style.overflow = '';
+            setTimeout(function() {
+                $('#imgModalImage').attr('src', '');
+            }, 0);
+        }
+
+        // ===== DATA =====
+        const skills = [
+            { name: 'C#.NET', years: 13.8, width: 95 },
+            { name: 'JavaScript', years: 12.0, width: 85 },
+            { name: 'SQL / T-SQL / EF Core', years: 12.5, width: 88 },
+            { name: 'Delphi', years: 10.8, width: 78 },
+            { name: 'HTML / CSS / Bootstrap', years: 8.5, width: 62 },
+            { name: 'API / WCF', years: 8.0, width: 58 },
+            { name: 'WPF / WinForms', years: 6.5, width: 48 },
+            { name: 'WebForms / ASP.NET MVC', years: 6.5, width: 48 },
+            { name: 'ReactJS / React Native', years: 3.2, width: 25 },
+            { name: 'Angular', years: 1.8, width: 15 },
+            { name: 'Docker / Kubernetes', years: 4.5, width: 35 },
+            { name: 'Azure DevOps / GitLab CI', years: 4.0, width: 30 },
+            { name: 'C++', years: 1.0, width: 8 },
+            { name: 'JAVA', years: 1.0, width: 8 }
+        ];
+
+        const achievements = [
+            { client: 'Shell Royal Dutch', role: 'Cloud Components Developer', desc: 'Developed cloud components for real-time measurement of anchor gravity on oil rigs in the ocean.' },
+            { client: 'Rompetrol Romania', role: 'Desktop Application Lead Developer', desc: 'Created a desktop application and RS232 COM driver for verifying machines that measure incoming oil along the main pipeline at the primary oil station in Ruse.' },
+            { client: 'London Stock Exchange', role: 'ElectronJS App Lead Developer', desc: 'Developed an internal ElectronJS application for video, voice, and screen sharing, similar to Skype.' },
+            { client: 'Promega USA', role: 'DNA Mathematics Analyst Lead Developer', desc: 'Conducted advanced mathematical analysis using linear and non-linear equations for DNA sequencing, including developing a Cartesian component for data presentation.' },
+            { client: 'NN Bulgaria', role: 'WCF and WebForm Developer', desc: 'Implemented WCF certification authorization services for internal corporate databases with secure key exchange. Developed a C# WebForm mechanism for loading website pages as resources efficiently.' },
+            { client: 'Videnov Bulgaria', role: 'Desktop Application Lead Developer', desc: 'Developed a desktop application to monitor and manage display and monitor connections across front trade offices.' },
+            { client: 'Kongsberg Norway', role: 'WPF and Silverlight Developer', desc: 'Created a WPF application for internal configurations. Developed Silverlight components for the oil industry. Implemented OAuth2.0 server and client authentication.' },
+            { client: 'Provident Funding USA', role: 'Fintech Module Developer', desc: 'Developed a financial module for loan reporting services using Microsoft Reporting and Excel.' },
+            { client: 'TMF Japan', role: 'JavaScript Library Developer', desc: 'Created the SimFast.js library to manage and organize JavaScript files as cached resources.' },
+            { client: 'Petrobras Brasil', role: 'UI Component Developer', desc: 'Developed various UI components for geolocation using Bing Map SDK, oil measurement, and sea vessel tracking.' },
+            { client: 'Media Streaming Platform', role: 'Microservices Architect & Developer', desc: 'Developed a microservice architecture with a reverse-proxy API Gateway (C# .NET Native 8), a JavaScript video player using the MediaSource API, and RESTful microservices to redistribute media (video and audio) chunks in C#.' },
+            { client: 'EV Charging Infrastructure', role: 'EV & OCPP Developer', desc: 'Developed projects related to Electric Vehicle (EV) charging infrastructure using the Open Charge Point Protocol (OCPP) in C#.' }
+        ];
+
+        const employment = [
+            {
+                company: 'EDDI (B2B via PETAR ZH Freelance)',
+				freelance: true,
+                date: '02.2026 – 05.2026',
+                role: 'WPF, React Native JS Developer · Team Lead',
+                tech: ['WPF', 'MVVM', 'Microsoft Prism', 'C#.Net Native 8', 'API', 'EF', 'Fluent API', 'JavaScript', 'React JSX', 'React Native'],
+                sectors: ['Nuclear', 'NDT Training'],
+                sectorClasses: ['nuclear', 'nuclear'],
+                description: 'Desktop Application for Eddy Current Defect Implantation Suite (MIZ‑30 / MIZ‑85) with Signal Transformation Rotate for the nuclear industry.'
+            },
+            {
+                company: 'Other HEALTH (B2B via PETAR ZH Freelance)',
+				freelance: true,
+                date: '02.2026 – 05.2026',
+                role: 'React Native Front-end JS Developer · Freelance',
+                tech: ['React Native', 'JavaScript'],
+                sectors: ['Health'],
+                sectorClasses: ['health'],
+                description: 'Health mobile app for Android and iOS.'
+            },
+            {
+                company: 'Other SmartDevices (B2B via PETAR ZH Freelance)',
+				freelance: true,
+                date: '02.2026 – 05.2026',
+                role: 'KiCad Microcontroller Developer · Freelance',
+                tech: ['React Native', 'JavaScript', 'KiCad', 'BLE'],
+                sectors: ['Smart Home', 'Hardware', 'IoT'],
+                sectorClasses: ['hardware', 'hardware', 'hardware'],
+                description: 'Design microcontroller, Bluetooth Low Energy device (BLE), React-Native mobile application for smart home security.'
+            },
+            {
+                company: 'Digitout Ltd.',
+                date: '04.2025 – 01.2026',
+                role: 'Web Site Programmer',
+                tech: ['C#.Net Native 8', 'API', 'EF', 'Fluent API', 'SignalR', 'JavaScript', 'React JSX'],
+                sectors: ['Cyber Security'],
+                sectorClasses: ['cyber'],
+                description: 'Cyber Security, VMWare, ESXi, VMWare APIs, etc.'
+            },
+            {
+                company: 'Velea AD (B2B via PETAR ZH Freelance)',
+				freelance: true,
+                date: '04.2025 – 01.2026',
+                role: 'Architect Freelance',
+                tech: ['C#.Net', 'Windows Service', 'Remote Desktop Monitoring Tool'],
+                sectors: ['Retail'],
+                sectorClasses: ['retail'],
+                description: 'Mebeli Videnov, Yambol — Desktop monitoring tool development.'
+            },
+            {
+                company: 'DERIVEME EOOD',
+                date: '10.2022 – 03.2024',
+                role: 'Expert – Design and Programming · Team Lead',
+                tech: ['WPF', 'WCF', 'API', 'C#.Net', 'Entity Framework Core', 'Fluent API', 'Angular', 'React Native'],
+                sectors: ['Financial', 'Stocks Exchange'],
+                sectorClasses: ['financial', 'financial'],
+                description: 'Financial and Stocks Exchange applications development.'
+            },
+            {
+                company: 'MVINE UK LTD (B2B via PETAR ZH Freelance)',
+				freelance: true,
+                date: '07.2020 – 09.2022',
+                role: 'JavaScript Freelancer · Front-end Developer · Team Lead',
+                tech: ['ElectronJS', 'ReactJS', 'React Native', 'JavaScript', 'CSS Bootstrap', 'Google Maps SDK', 'Docker', 'Kubernetes', 'Terraform', 'C#.Net Native 8', 'Entity Framework Core', 'Fluent API'],
+                sectors: ['Financial', 'Stocks Exchange'],
+                sectorClasses: ['financial', 'financial'],
+                description: 'Financial, London Stock Exchange UK, TMF Japan — Internal communication and trading tools.'
+            },
+            {
+                company: 'ENSIS LTD',
+                date: '07.2020 – 09.2022',
+                role: 'Programmer',
+                tech: ['ReactJSX', 'React Native', 'JavaScript', 'Delphi', 'PostgreSQL', 'C# ASP.NET Core'],
+                sectors: ['Oil'],
+                sectorClasses: ['oil'],
+                description: 'Oil industry software solutions.'
+            },
+            {
+                company: 'FERATEL DEVELOPMENT CENTER EOOD',
+                date: '01.2020 – 06.2020',
+                role: 'Software Applications Programmer',
+                tech: ['C# Core', 'Angular', 'Microservices', 'Gateway-reverse proxy', 'Load Balancing', 'MassTransit', 'RabbitMQ', 'SignalR', 'API', 'SAGA', 'Distributed cache'],
+                sectors: ['Australia Winter Resort'],
+                sectorClasses: ['retail'],
+                description: 'Australia Winter Resort System — distributed microservices architecture.'
+            },
+            {
+                company: 'PROVITECH SOLUTIONS EOOD',
+                date: '10.2017 – 12.2019',
+                role: 'Software Applications Programmer',
+                tech: ['C#.Net WebForms', 'Microsoft Reports', 'Excel Reports', 'JavaScript', 'HTML', 'Angular', 'MSSQL', 'TSQL'],
+                sectors: ['Financial'],
+                sectorClasses: ['financial'],
+                description: 'Financial, Provident USA, Private Loans, Bankruptcy — reporting and loan management systems.'
+            },
+            {
+                company: 'KAUFLAND SERVICES EOOD',
+                date: '07.2017 – 12.2017',
+                role: 'Software Developer',
+                tech: ['SharePoint', 'C#', 'PowerShell', 'JavaScript'],
+                sectors: ['Retail', 'POS'],
+                sectorClasses: ['retail', 'retail'],
+                description: 'POS Retail, Internal Administrative Platform, Schwarz Group, Microsoft Germany.'
+            },
+            {
+                company: 'ASCENT SERVICES EOOD',
+                date: '01.2017 – 06.2017',
+                role: 'Programmer-Analyst',
+                tech: ['C# MVC', 'Razor', 'Entity Framework', 'JWT', 'JavaScript', 'TSQL', 'API'],
+                sectors: ['Financial', 'CMS', 'CRM'],
+                sectorClasses: ['financial', 'financial', 'financial'],
+                description: 'Financial, CMS, CRM, Shopify, Magento, Salesforce Commerce Cloud, BigCommerce, POQ'
+            },
+            {
+                company: 'MADISOFT BULGARIA LTD',
+                date: '01.2016 – 12.2016',
+                role: 'Expert – Design and Programming',
+                tech: ['C#.Net', 'WPF', '.Net OxyPlot'],
+                sectors: ['Bio Informatics'],
+                sectorClasses: ['health'],
+                description: 'Bio Informatics, Math Analysis, Promega USA — DNA sequencing data analysis.'
+            },
+            {
+                company: 'NN INSURANCE AD – SOFIA BRANCH',
+                date: '08.2015 – 12.2015',
+                role: 'Software Applications Programmer',
+                tech: ['C# ASP.NET WebForms', 'WCF', 'Ado.Net', 'TSQL'],
+                sectors: ['Financial', 'Insurance'],
+                sectorClasses: ['financial', 'financial'],
+                description: 'Financial, Banking, Insurance — WCF services and WebForms development.'
+            },
+            {
+                company: 'PENSION INSURANCE COMPANY OBB EAD',
+                date: '08.2015 – 12.2015',
+                role: 'Software Applications Programmer',
+                tech: ['C# ASP.NET WebForms', 'WCF', 'Ado.Net', 'TSQL'],
+                sectors: ['Financial', 'Insurance'],
+                sectorClasses: ['financial', 'financial'],
+                description: 'Financial, Banking, Insurance — supplementary pension insurance systems.'
+            },
+            {
+                company: 'DELTASTOCK AD',
+                date: '07.2015 – 07.2015',
+                role: 'Expert – Design and Programming',
+                tech: ['VB.NET', 'WPF', 'Win Forms'],
+                sectors: ['Financial', 'Stocks Exchange'],
+                sectorClasses: ['financial', 'financial'],
+                description: 'Financial, Stocks Exchange — trading platform development.'
+            },
+            {
+                company: 'INTERCONSULT BULGARIA EOOD',
+                date: '12.2011 – 06.2015',
+                role: 'Senior Developer',
+                tech: ['C#.Net', 'SILVERLIGHT', 'WPF', 'WCF', 'TSQL'],
+                sectors: ['Oil'],
+                sectorClasses: ['oil'],
+                description: 'Oil, Kongsberg, Petrobras, Shell Royal — oil measurement and vessel tracking systems.'
+            },
+            {
+                company: 'DATA SOLUTIONS EOOD',
+                date: '09.2011 – 11.2011',
+                role: 'Software Applications Programmer',
+                tech: ['C#.Net', 'WPF', 'SILVERLIGHT'],
+                sectors: ['Government'],
+                sectorClasses: ['government'],
+                description: 'Government, National Statistical Institute of Bulgaria.'
+            },
+            {
+                company: 'SPEEDY EAD',
+                date: '04.2011 – 08.2011',
+                role: 'Programmer-Analyst',
+                tech: ['Delphi'],
+                sectors: ['Logistics'],
+                sectorClasses: ['retail'],
+                description: 'Internal Shipping and Tracking Software.'
+            },
+            {
+                company: 'DAISE-SET EOOD',
+                date: '06.2010 – 02.2011',
+                role: 'Programmer',
+                tech: ['Delphi'],
+                sectors: ['Oil'],
+                sectorClasses: ['oil'],
+                description: 'Oil, Rom Petrol Bulgaria at Ruse Logistic Center.'
+            },
+            {
+                company: 'BANK TECH SIS EOOD',
+                date: '11.2009 – 05.2010',
+                role: 'Programmer, KiCAD Electronics Technician',
+                tech: ['Delphi', 'RS232', 'BLE'],
+                sectors: ['Hardware', 'Parking Systems', 'IoT'],
+                sectorClasses: ['hardware', 'hardware'],
+                description: 'Hardware, Parking Systems, Hotel Maintenance Software, 5 minutes Car cleaner, Hospital Parking Systems, RF-ID COM port RS232 communication.'
+            },
+            {
+                company: 'BRAVO INVESTMENTS EOOD',
+                date: '08.2009 – 10.2009',
+                role: 'Programmer',
+                tech: ['C#.Net WebForms'],
+                sectors: ['Financial', 'Government'],
+                sectorClasses: ['financial', 'government'],
+                description: 'Financial and Government sector applications.'
+            },
+            {
+                company: 'STRATOS SOFT LTD',
+                date: '05.2008 – 07.2009',
+                role: 'Programmer',
+                tech: ['Delphi'],
+                sectors: ['Financial'],
+                sectorClasses: ['financial'],
+                description: 'Financial, Car service and maintenance software.'
+            },
+            {
+                company: 'INOVASIS LTD',
+                date: '04.2008 – 04.2008',
+                role: 'Programmer',
+                tech: ['Delphi', 'C# ASP.Net Web Forms'],
+                sectors: ['Financial'],
+                sectorClasses: ['financial'],
+                description: 'Financial, KIA Motors.'
+            },
+            {
+                company: 'ADVANTISOFT LTD',
+                date: '03.2007 – 03.2008',
+                role: 'Programmer',
+                tech: ['JAVA', 'JavaScript', 'Delphi'],
+                sectors: ['Retail', 'POS'],
+                sectorClasses: ['retail', 'retail'],
+                description: 'Financial, K-Mart and Sears, POS Retail System, Practicorp USA.'
+            },
+            {
+                company: 'IKOSOFT LTD',
+                date: '09.2005 – 08.2006',
+                role: 'Delphi Developer',
+                tech: ['Delphi', 'Monolithic Odit System - Tornado'],
+                sectors: ['Financial'],
+                sectorClasses: ['financial'],
+                description: 'Financial sector software development.'
+            },
+            {
+                company: 'PETROL AD – BURGAS BRANCH',
+                date: '05.2003 – 06.2004',
+                role: 'Junior Programmer',
+                tech: ['C++'],
+                sectors: ['Oil'],
+                sectorClasses: ['oil'],
+                description: 'Junior Programmer and Expert Internal POS Store System.'
+            }
+        ];
+
+        // ===== RENDER SKILLS =====
+        function renderSkills() {
+            const container = $('#skills-container');
+            skills.forEach((skill, index) => {
+                const html = `
+                    <div class="skill-row">
+                        <div class="skill-name">${skill.name}</div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-bar" data-width="${skill.width}" style="width: 0%"></div>
+                        </div>
+                        <div class="skill-years">${skill.years}Y</div>
+                    </div>
+                `;
+                container.append(html);
+            });
+
+            // Animate bars
+            setTimeout(() => {
+                $('.skill-bar').each(function() {
+                    $(this).css('width', $(this).data('width') + '%');
+                });
+            }, 500);
+        }
+
+        // ===== RENDER ACHIEVEMENTS =====
+        function renderAchievements() {
+            const container = $('#achievements-container');
+            achievements.forEach(ach => {
+                const html = `
+                    <div class="achievement-card">
+                        <div class="ach-client">${ach.client}</div>
+                        <div class="ach-role">${ach.role}</div>
+                        <div class="ach-desc">${ach.desc}</div>
+                    </div>
+                `;
+                container.append(html);
+            });
+        }
+
+        // ===== EXTRACT UNIQUE SECTORS =====
+        function getUniqueSectors() {
+            const sectorMap = {};
+            employment.forEach(job => {
+                job.sectors.forEach((sector, idx) => {
+                    const key = sector.toLowerCase();
+                    if (!sectorMap[key]) {
+                        sectorMap[key] = { label: sector, class: job.sectorClasses[idx], count: 0 };
+                    }
+                    sectorMap[key].count++;
+                });
+            });
+            return sectorMap;
+        }
+
+        // ===== RENDER FILTER BUTTONS =====
+        function renderFilters() {
+            const sectors = getUniqueSectors();
+            const container = $('#sector-filters');
+            const sectorIcons = {
+                'nuclear': 'bi-radioactive',
+                'health': 'bi-heart-pulse-fill',
+                'smart home': 'bi-house-gear-fill',
+                'hardware': 'bi-cpu-fill',
+                'cyber security': 'bi-shield-lock-fill',
+                'retail': 'bi-shop',
+                'pos': 'bi-cash-stack',
+                'financial': 'bi-bank',
+                'stocks exchange': 'bi-graph-up-arrow',
+                'oil': 'bi-droplet-fill',
+                'australia winter resort': 'bi-snow',
+                'insurance': 'bi-shield-check',
+                'cms': 'bi-file-earmark-text',
+                'crm': 'bi-people-fill',
+                'bio informatics': 'bi-virus',
+                'government': 'bi-building-fill',
+                'logistics': 'bi-truck',
+                'parking systems': 'bi-p-circle-fill',
+                'iot': 'bi-wifi'
+            };
+
+            Object.entries(sectors).forEach(([key, data]) => {
+                const icon = sectorIcons[key] || 'bi-tag-fill';
+                const html = `
+                    <button class="filter-btn" data-sector="${key}">
+                        <i class="bi ${icon}"></i> ${data.label}
+                        <span class="badge-count">${data.count}</span>
+                    </button>
+                `;
+                container.append(html);
+            });
+
+            // Update total count
+            $('#count-all').text(employment.length);
+            $('#total-count').text(employment.length);
+            $('#showing-count').text(employment.length);
+        }
+
+        // ===== RENDER EMPLOYMENT =====
+        function renderEmployment() {
+            const container = $('#employment-container');
+            employment.forEach((job, index) => {
+                const techTags = job.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+                const sectorTags = job.sectors.map((s, i) => `<span class="sector-tag ${job.sectorClasses[i]}">${s}</span>`).join('');
+
+                const html = `
+                    <div class="employment-card${job.freelance ? ' freelance' : ''}" data-sectors="${job.sectors.map(s => s.toLowerCase()).join(',')}">
+                        <div class="emp-header">
+                            <div>
+                                <div class="emp-company">${job.company}</div>
+                                <div class="emp-role">${job.role}</div>
+                            </div>
+                            <div class="emp-date">${job.date}</div>
+                        </div>
+                        <div class="emp-tech">${techTags}</div>
+                        <div class="emp-sector">${sectorTags}</div>
+                        ${job.description ? `<div style="margin-top: 10px; color: #64748b; font-size: 0.9rem; position: relative; z-index: 1;"><i class="bi bi-info-circle" style="color: var(--primary);"></i> ${job.description}</div>` : ''}
+                    </div>
+                `;
+                container.append(html);
+            });
+        }
+
+        // ===== FILTER LOGIC =====
+        function filterEmployment(sector) {
+            let visibleCount = 0;
+
+            $('.employment-card').each(function() {
+                const cardSectors = $(this).data('sectors').split(',');
+                if (sector === 'all' || cardSectors.includes(sector)) {
+                    $(this).removeClass('hidden-card').hide().fadeIn(300);
+                    visibleCount++;
+                } else {
+                    $(this).addClass('hidden-card');
+                }
+            });
+
+            $('#showing-count').text(visibleCount);
+
+            if (visibleCount === 0) {
+                $('#no-results').fadeIn(300);
+            } else {
+                $('#no-results').hide();
+            }
+        }
+
+        // ===== EVENT HANDLERS =====
+        $(document).ready(function() {
+            renderSkills();
+            renderAchievements();
+            renderFilters();
+            renderEmployment();
+
+            // Filter click handler
+            $(document).on('click', '.filter-btn', function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                const sector = $(this).data('sector');
+                filterEmployment(sector);
+            });
+        });
+    </script>
+
+
+
+
+<!-- D3 v4 -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<!-- d3-cloud layout -->
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+<script>
+(function () {
+    var words = [
+        { word: "React Native",   size: 38 },
+        { word: "ReactJS",        size: 36 },
+        { word: "C#",             size: 42 },
+        { word: "ASP.NET Core",   size: 36 },
+        { word: ".Net 6/8/10",    size: 32 },
+        { word: "JavaScript",     size: 35 },
+        { word: "HTML",           size: 28 },
+        { word: "CSS",            size: 26 },
+        { word: "Angular 16",     size: 30 },
+        { word: "TypeScript",     size: 28 },
+        { word: "jQuery",         size: 24 },
+        { word: "Bootstrap",      size: 24 },
+        { word: "Delphi",         size: 28 },
+        { word: "WPF",            size: 26 },
+        { word: "WinForms",       size: 22 },
+        { word: "Silverlight",    size: 20 },
+        { word: "WCF",            size: 20 },
+        { word: "LINQ",           size: 22 },
+        { word: "TSQL",           size: 24 },
+        { word: "Entity Framework", size: 28 },
+        { word: "Fluent API",     size: 20 },
+        { word: "Ado.NET",        size: 20 },
+        { word: "WebAPI",         size: 26 },
+        { word: "Java Kotlin",    size: 26 },
+        { word: "Microservices",  size: 34 },
+        { word: "NServiceBus",    size: 22 },
+        { word: "MassTransit",    size: 22 },
+        { word: "Ocelot",         size: 16 },
+		{ word: "YARP",           size: 14 },
+        { word: "Hangfire",       size: 20 },
+        { word: "Docker",         size: 32 },
+        { word: "MSSQL",          size: 28 },
+        { word: "Redis",          size: 26 },
+        { word: "NoSQL",          size: 24 },
+		{ word: "Media Source API",size: 24 },
+		{ word: "Bootstrap",size: 24 },
+		{ word: "OpenCvSharp4",size: 14 },
+        { word: "Computer Vision",size: 34 },
+		
+        { word: "ASP.Net WebForms",size: 20 },
+		{ word: "ASP.NET MVC",size: 26 },
+        { word: "AI Translation",size: 24 },
+		{ word: "Google Maps SDK",size: 14 },
+        { word: "Elasticsearch",  size: 26 },
+        { word: "ESXi",           size: 20 },
+        { word: "CI/CD",          size: 30 },
+        { word: "GitLab CE",      size: 24 },
+        { word: "Azure DevOps",   size: 28 },
+
+	    { word: "Kubernetes",     size: 30 },
+		{ word: "Terraform",      size: 12 },
+        { word: "Ansible",        size: 12 },
+
+		{ word: "Streaming Brokers",        size: 12 },
+		{ word: "Message Brokers",        size: 12 },
+		{ word: "NService Bus",        size: 12 },
+		{ word: "RabbitMQ",        size: 12 },
+	    { word: "Azure Service Bus",        size: 12 },
+		
+        { word: "GIT",            size: 26 },
+        { word: "Azure",          size: 30 },
+        { word: "SVN",            size: 18 },
+        { word: "TFS",            size: 18 },
+        { word: "VSS",            size: 16 }
+    ];
+
+    var palette = ["#2563eb","#7c3aed","#06b6d4","#10b981","#f59e0b","#ef4444","#0f172a","#475569"];
+
+    var container = document.getElementById("skills-wordcloud");
+    var W = container.clientWidth || 700;
+    var H = 340;
+
+    var layout = d3.layout.cloud()
+        .size([W, H])
+        .words(words.map(function(d) { return { text: d.word, size: d.size }; }))
+        .padding(6)
+        .rotate(function() { return ~~(Math.random() * 2) * 90; })
+        .font("Inter, sans-serif")
+        .fontSize(function(d) { return d.size; })
+        .on("end", draw);
+
+    layout.start();
+
+    function draw(wordsOut) {
+        d3.select("#skills-wordcloud")
+          .append("svg")
+            .attr("width", W)
+            .attr("height", H)
+            .style("display", "block")
+            .style("margin", "0 auto")
+          .append("g")
+            .attr("transform", "translate(" + W / 2 + "," + H / 2 + ")")
+          .selectAll("text")
+            .data(wordsOut)
+          .enter().append("text")
+            .style("font-family", "Inter, sans-serif")
+            .style("font-weight", "700")
+            .style("fill", function(_, i) { return palette[i % palette.length]; })
+            .style("cursor", "default")
+            .attr("text-anchor", "middle")
+            .attr("font-size", function(d) { return d.size + "px"; })
+            .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function(d) { return d.text; })
+            .on("mouseover", function() {
+                d3.select(this).style("opacity", 0.7);
+            })
+            .on("mouseout", function() {
+                d3.select(this).style("opacity", 1);
+            });
+    }
+})();
+</script>
+
+
+
+<script>
+/* ===== INDUSTRY NETWORK (D3 v4 — reuses already-loaded library) ===== */
+(function () {
+
+    /* ── SECTOR PALETTE ───────────────────────────────────────────── */
+    var COLORS = {
+        me:        '#2563eb',
+        oil:       '#ef4444',
+        financial: '#10b981',
+        health:    '#ec4899',
+        retail:    '#06b6d4',
+        nuclear:   '#84cc16'
+    };
+    var LABELS = {
+        me:        'You',
+        oil:       'Oil & Energy',
+        financial: 'Financial',
+        health:    'Health / Bio',
+        retail:    'Retail / Tech',
+        nuclear:   'Nuclear / NDT'
+    };
+
+    /* ── NODES ────────────────────────────────────────────────────── */
+    var nodes = [
+        { id: 'Me',                    sector: 'me',        flag: '🇧🇬', company: 'Petar Evgeniev',        role: 'Fullstack Developer' },
+        { id: 'Shell Royal Dutch',     sector: 'oil',       flag: '🇳🇱', company: 'Shell Royal Dutch',     role: 'Cloud Components Developer' },
+        { id: 'Rompetrol',             sector: 'oil',       flag: '🇷🇴', company: 'Rompetrol Romania',     role: 'Desktop App Lead Developer' },
+        { id: 'Kongsberg',             sector: 'oil',       flag: '🇳🇴', company: 'Kongsberg Norway',      role: 'WPF & Silverlight Developer' },
+        { id: 'Petrobras',             sector: 'oil',       flag: '🇧🇷', company: 'Petrobras Brasil',      role: 'UI Component Developer' },
+        { id: 'London Stock Exchange', sector: 'financial', flag: '🇬🇧', company: 'London Stock Exchange', role: 'ElectronJS App Lead Developer' },
+        { id: 'NN Bulgaria',           sector: 'financial', flag: '🇧🇬', company: 'NN Bulgaria',           role: 'WCF & WebForm Developer' },
+        { id: 'Provident Funding',     sector: 'financial', flag: '🇺🇸', company: 'Provident Funding USA', role: 'Fintech Module Developer' },
+        { id: 'TMF Japan',             sector: 'financial', flag: '🇯🇵', company: 'TMF Japan',             role: 'JavaScript Library Developer' },
+        { id: 'Promega USA',           sector: 'health',    flag: '🇺🇸', company: 'Promega USA',           role: 'DNA Mathematics Analyst' },
+        { id: 'Videnov Bulgaria',      sector: 'retail',    flag: '🇧🇬', company: 'Videnov Bulgaria',      role: 'Desktop App Lead Developer' }
+    ];
+
+    /* ── LINKS ────────────────────────────────────────────────────── */
+    var links = [];
+    // Me → every company
+    nodes.forEach(function(n) {
+        if (n.id !== 'Me') links.push({ source: 'Me', target: n.id, type: 'me' });
+    });
+    // intra-sector pairs
+    function addSectorPairs(sector) {
+        var ids = nodes.filter(function(n){ return n.sector === sector; }).map(function(n){ return n.id; });
+        for (var i = 0; i < ids.length; i++)
+            for (var j = i + 1; j < ids.length; j++)
+                links.push({ source: ids[i], target: ids[j], type: sector });
+    }
+    addSectorPairs('oil');
+    addSectorPairs('financial');
+
+    /* ── SVG SETUP ────────────────────────────────────────────────── */
+    var wrap = document.getElementById('network-graph');
+    var svgEl = document.getElementById('network-svg');
+    var tip   = document.getElementById('network-tooltip');
+    var W = Math.max(wrap.clientWidth || 760, 340);
+    var H = Math.max(Math.round(W * 0.55), 380);
+    svgEl.setAttribute('height', H);
+
+    var svg = d3.select('#network-svg');
+
+    /* glow filter */
+    var defs = svg.append('defs');
+    defs.append('filter').attr('id', 'net-glow').html(
+        '<feGaussianBlur stdDeviation="3" result="b"/>' +
+        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+    );
+
+    /* zoom/pan layer */
+    var g = svg.append('g');
+    svg.call(d3.zoom().scaleExtent([0.35, 3]).on('zoom', function() {
+        g.attr('transform', d3.event.transform);
+    }));
+
+    /* ── SIMULATION ───────────────────────────────────────────────── */
+    var simulation = d3.forceSimulation(nodes)
+        .force('link',      d3.forceLink(links).id(function(d){ return d.id; })
+                              .distance(function(d){ return d.type === 'me' ? 140 : 72; })
+                              .strength(0.55))
+        .force('charge',    d3.forceManyBody().strength(-350))
+        .force('center',    d3.forceCenter(W / 2, H / 2))
+        .force('collision', d3.forceCollide(42));
+
+    /* ── LINKS ────────────────────────────────────────────────────── */
+    var linkSel = g.append('g').attr('class', 'net-links')
+        .selectAll('line').data(links).enter().append('line')
+        .attr('stroke', function(d){ return d.type === 'me' ? '#cbd5e1' : COLORS[d.type] || '#94a3b8'; })
+        .attr('stroke-width', function(d){ return d.type === 'me' ? 1.2 : 2.4; })
+        .attr('stroke-opacity', function(d){ return d.type === 'me' ? 0.45 : 0.4; })
+        .attr('stroke-dasharray', function(d){ return d.type === 'me' ? '5 3' : null; });
+
+    /* ── NODE GROUPS ──────────────────────────────────────────────── */
+    var nodeG = g.append('g').attr('class', 'net-nodes')
+        .selectAll('g').data(nodes).enter().append('g')
+        .style('cursor', 'grab')
+        .call(
+            d3.drag()
+              .on('start', function(d) {
+                  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                  d.fx = d.x; d.fy = d.y;
+                  d3.select(this).style('cursor', 'grabbing');
+              })
+              .on('drag', function(d) { d.fx = d3.event.x; d.fy = d3.event.y; })
+              .on('end',  function(d) {
+                  if (!d3.event.active) simulation.alphaTarget(0);
+                  d.fx = null; d.fy = null;
+                  d3.select(this).style('cursor', 'grab');
+              })
+        );
+
+    /* outer ring */
+    nodeG.append('circle')
+        .attr('r',    function(d){ return d.id === 'Me' ? 30 : 22; })
+        .attr('fill', function(d){ return COLORS[d.sector] || '#64748b'; })
+        .attr('fill-opacity', 0.12)
+        .attr('stroke', function(d){ return COLORS[d.sector] || '#64748b'; })
+        .attr('stroke-width', function(d){ return d.id === 'Me' ? 3 : 2; })
+        .attr('filter', function(d){ return d.id === 'Me' ? 'url(#net-glow)' : null; });
+
+    /* flag emoji */
+    nodeG.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'central')
+        .attr('font-size', function(d){ return d.id === 'Me' ? '18px' : '14px'; })
+        .text(function(d){ return d.flag; });
+
+    /* label below node */
+    nodeG.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('y', function(d){ return (d.id === 'Me' ? 30 : 22) + 14; })
+        .attr('font-family', 'Inter, sans-serif')
+        .attr('font-weight', function(d){ return d.id === 'Me' ? '800' : '600'; })
+        .attr('fill', function(d){ return d.id === 'Me' ? '#0f172a' : '#334155'; })
+        .each(function(d) {
+            var el = d3.select(this);
+            var words = d.id.split(' ');
+            if (words.length <= 2) {
+                el.attr('font-size', d.id === 'Me' ? '11px' : '9px').text(d.id);
+            } else {
+                var mid = Math.ceil(words.length / 2);
+                el.attr('font-size', '8.5px');
+                el.append('tspan').attr('x', 0).attr('dy', '0').text(words.slice(0, mid).join(' '));
+                el.append('tspan').attr('x', 0).attr('dy', '1.2em').text(words.slice(mid).join(' '));
+            }
+        });
+
+    /* ── TOOLTIP ──────────────────────────────────────────────────── */
+    nodeG
+        .on('mouseover', function(d) {
+            var sectorLabel = LABELS[d.sector] || d.sector;
+            var sectorColor = COLORS[d.sector] || '#64748b';
+            tip.innerHTML =
+                '<div style="font-weight:700;font-size:0.9rem;margin-bottom:3px">' + d.flag + ' ' + d.company + '</div>' +
+                '<div style="color:#94a3b8;font-size:0.8rem;margin-bottom:5px">' + d.role + '</div>' +
+                '<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.07);padding:3px 9px;border-radius:50px;">' +
+                '<span style="width:7px;height:7px;border-radius:50%;background:' + sectorColor + ';display:inline-block"></span>' +
+                '<span style="color:' + sectorColor + ';font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.8px">' + sectorLabel + '</span>' +
+                '</div>';
+            tip.style.opacity = '1';
+        })
+        .on('mousemove', function() {
+            var box = wrap.getBoundingClientRect();
+            var mx = d3.event.clientX - box.left + 14;
+            var my = d3.event.clientY - box.top  - 10;
+            // keep tooltip inside container
+            if (mx + 250 > W) mx = mx - 270;
+            tip.style.left = mx + 'px';
+            tip.style.top  = my + 'px';
+        })
+        .on('mouseout', function() {
+            tip.style.opacity = '0';
+        });
+
+    /* ── TICK ─────────────────────────────────────────────────────── */
+    simulation.on('tick', function() {
+        linkSel
+            .attr('x1', function(d){ return d.source.x; })
+            .attr('y1', function(d){ return d.source.y; })
+            .attr('x2', function(d){ return d.target.x; })
+            .attr('y2', function(d){ return d.target.y; });
+        nodeG.attr('transform', function(d){ return 'translate(' + d.x + ',' + d.y + ')'; });
+    });
+
+    /* ── HINT TEXT ────────────────────────────────────────────────── */
+    svg.append('text')
+        .attr('x', W - 10).attr('y', H - 8)
+        .attr('text-anchor', 'end')
+        .attr('font-family', 'Inter, sans-serif')
+        .attr('font-size', '10px')
+        .attr('fill', '#cbd5e1')
+        .text('scroll to zoom · drag nodes · drag canvas to pan');
+
+    /* ── LEGEND ───────────────────────────────────────────────────── */
+    var legendEl = document.getElementById('network-legend');
+    Object.keys(LABELS).forEach(function(key) {
+        var span = document.createElement('span');
+        span.style.cssText =
+            'display:inline-flex;align-items:center;gap:6px;' +
+            'background:white;border:1.5px solid ' + COLORS[key] + ';' +
+            'padding:4px 12px;border-radius:50px;' +
+            'font-size:0.78rem;font-weight:600;' +
+            'color:' + COLORS[key] + ';font-family:Inter,sans-serif;';
+        span.innerHTML =
+            '<span style="width:8px;height:8px;border-radius:50%;background:' + COLORS[key] + ';display:inline-block"></span>' +
+            LABELS[key];
+        legendEl.appendChild(span);
+    });
+
+})();
+</script>
+
+</body>
+</html>
