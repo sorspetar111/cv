@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <noscript>
+    <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.html" />
     </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,11 @@
             --gradient-2: #7c3aed;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -46,36 +50,46 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 6s ease-in-out infinite;
-        }
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: pulse 6s ease-in-out infinite;
+            }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 8s ease-in-out infinite reverse;
-        }
+            .hero::after {
+                content: '';
+                position: absolute;
+                bottom: -30%;
+                left: -10%;
+                width: 400px;
+                height: 400px;
+                background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: pulse 8s ease-in-out infinite reverse;
+            }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
         }
 
-        .hero-content { position: relative; z-index: 2; }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
 
         .hero h1 {
             font-size: 3.2rem;
@@ -111,14 +125,17 @@
             cursor: pointer;
         }
 
-        .contact-chip:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
+            .contact-chip:hover {
+                background: rgba(255,255,255,0.15);
+                border-color: var(--primary);
+                color: white;
+                transform: translateY(-2px);
+            }
 
-        .contact-chip i { color: var(--accent); font-size: 1rem; }
+            .contact-chip i {
+                color: var(--accent);
+                font-size: 1rem;
+            }
 
         /* Section styling */
         .section-title {
@@ -131,17 +148,17 @@
             gap: 12px;
         }
 
-        .section-title i {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
+            .section-title i {
+                width: 44px;
+                height: 44px;
+                background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+                color: white;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
 
         .section-card {
             background: var(--card-bg);
@@ -153,9 +170,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .section-card:hover {
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-        }
+            .section-card:hover {
+                box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            }
 
         /* Skills */
         .skill-row {
@@ -190,16 +207,16 @@
             position: relative;
         }
 
-        .skill-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 20px;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
-            border-radius: 0 10px 10px 0;
-        }
+            .skill-bar::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 20px;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+                border-radius: 0 10px 10px 0;
+            }
 
         .skill-years {
             min-width: 50px;
@@ -236,32 +253,32 @@
             gap: 6px;
         }
 
-        .filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(37,99,235,0.1);
-        }
+            .filter-btn:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(37,99,235,0.1);
+            }
 
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(37,99,235,0.3);
-        }
+            .filter-btn.active {
+                background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+            }
 
-        .filter-btn .badge-count {
-            background: rgba(255,255,255,0.25);
-            color: inherit;
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-weight: 700;
-        }
+            .filter-btn .badge-count {
+                background: rgba(255,255,255,0.25);
+                color: inherit;
+                font-size: 0.7rem;
+                padding: 2px 8px;
+                border-radius: 10px;
+                font-weight: 700;
+            }
 
-        .filter-btn.active .badge-count {
-            background: rgba(255,255,255,0.3);
-        }
+            .filter-btn.active .badge-count {
+                background: rgba(255,255,255,0.3);
+            }
 
         /* Employment Cards */
         .employment-card {
@@ -276,37 +293,39 @@
             overflow: hidden;
         }
 
-.employment-card.govertment {
-    border-left-color: var(--warning);
-}
+            .employment-card.govertment {
+                border-left-color: var(--warning);
+            }
 
 
-.employment-card.freelance {
-    border-left-color: #f59e0b !important;
-}
-		
-        .employment-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(37,99,235,0.02), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+            .employment-card.freelance {
+                border-left-color: #f59e0b !important;
+            }
 
-        .employment-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
+            .employment-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(37,99,235,0.02), transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
 
-        .employment-card:hover::before { opacity: 1; }
+            .employment-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            }
 
-        .employment-card.hidden-card {
-            display: none;
-        }
+                .employment-card:hover::before {
+                    opacity: 1;
+                }
+
+            .employment-card.hidden-card {
+                display: none;
+            }
 
         .emp-header {
             display: flex;
@@ -380,14 +399,45 @@
             font-weight: 600;
         }
 
-        .sector-tag.oil { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; }
-        .sector-tag.financial { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #166534; }
-        .sector-tag.health { background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #9d174d; }
-        .sector-tag.cyber { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; }
-        .sector-tag.retail { background: linear-gradient(135deg, #ccfbf1, #99f6e4); color: #115e59; }
-        .sector-tag.government { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
-        .sector-tag.hardware { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; }
-        .sector-tag.nuclear { background: linear-gradient(135deg, #ecfccb, #d9f99d); color: #3f6212; }
+            .sector-tag.oil {
+                background: linear-gradient(135deg, #fee2e2, #fecaca);
+                color: #991b1b;
+            }
+
+            .sector-tag.financial {
+                background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                color: #166534;
+            }
+
+            .sector-tag.health {
+                background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+                color: #9d174d;
+            }
+
+            .sector-tag.cyber {
+                background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+                color: #3730a3;
+            }
+
+            .sector-tag.retail {
+                background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+                color: #115e59;
+            }
+
+            .sector-tag.government {
+                background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+                color: #6b21a8;
+            }
+
+            .sector-tag.hardware {
+                background: linear-gradient(135deg, #ffedd5, #fed7aa);
+                color: #9a3412;
+            }
+
+            .sector-tag.nuclear {
+                background: linear-gradient(135deg, #ecfccb, #d9f99d);
+                color: #3f6212;
+            }
 
         /* Achievement Cards */
         .achievement-card {
@@ -401,20 +451,20 @@
             transition: all 0.3s ease;
         }
 
-        .achievement-card:hover {
-            border-color: var(--primary);
-            transform: translateX(5px);
-        }
+            .achievement-card:hover {
+                border-color: var(--primary);
+                transform: translateX(5px);
+            }
 
-        .achievement-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--gradient-1), var(--gradient-2));
-        }
+            .achievement-card::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, var(--gradient-1), var(--gradient-2));
+            }
 
         .ach-client {
             font-size: 0.75rem;
@@ -453,14 +503,16 @@
             transition: all 0.3s ease;
         }
 
-        .expertise-tag:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(37,99,235,0.1);
-        }
+            .expertise-tag:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(37,99,235,0.1);
+            }
 
-        .expertise-tag i { color: var(--accent); }
+            .expertise-tag i {
+                color: var(--accent);
+            }
 
         /* Animations */
         .fade-in {
@@ -469,15 +521,36 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
 
         /* Cloud Experience Chips */
         .cloud-chip {
@@ -497,38 +570,50 @@
             min-width: 130px;
         }
 
-        .cloud-chip i {
-            font-size: 1.15rem;
-            margin-bottom: 4px;
-        }
+            .cloud-chip i {
+                font-size: 1.15rem;
+                margin-bottom: 4px;
+            }
 
-        .cloud-chip span {
-            font-weight: 700;
-            color: var(--dark);
-            font-size: 0.82rem;
-        }
+            .cloud-chip span {
+                font-weight: 700;
+                color: var(--dark);
+                font-size: 0.82rem;
+            }
 
-        .cloud-chip small {
-            font-size: 0.72rem;
-            font-weight: 500;
-            color: #94a3b8;
-            line-height: 1.2;
-        }
+            .cloud-chip small {
+                font-size: 0.72rem;
+                font-weight: 500;
+                color: #94a3b8;
+                line-height: 1.2;
+            }
 
-        .cloud-chip:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 14px rgba(37,99,235,0.10);
-            transform: translateY(-2px);
-        }
+            .cloud-chip:hover {
+                border-color: var(--primary);
+                box-shadow: 0 4px 14px rgba(37,99,235,0.10);
+                transform: translateY(-2px);
+            }
 
         /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #94a3b8;
+            }
 
 
-   /* ===== CLOUD EXPERIENCE SECTION ===== */
+        /* ===== CLOUD EXPERIENCE SECTION ===== */
         .cloud-provider-tab {
             display: inline-flex;
             align-items: center;
@@ -544,26 +629,35 @@
             transition: all 0.3s ease;
             margin: 4px;
         }
-        .cloud-provider-tab:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+
+            .cloud-provider-tab:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            }
+
+            .cloud-provider-tab.active-azure {
+                background: linear-gradient(135deg, #0078d4, #005a9e);
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 4px 15px rgba(0,120,212,0.35);
+            }
+
+            .cloud-provider-tab.active-google {
+                background: linear-gradient(135deg, #4285f4, #0f9d58);
+                color: white;
+                border-color: transparent;
+                box-shadow: 0 4px 15px rgba(66,133,244,0.35);
+            }
+
+        .cloud-panel {
+            display: none;
         }
-        .cloud-provider-tab.active-azure {
-            background: linear-gradient(135deg, #0078d4, #005a9e);
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(0,120,212,0.35);
-        }
-        .cloud-provider-tab.active-google {
-            background: linear-gradient(135deg, #4285f4, #0f9d58);
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(66,133,244,0.35);
-        }
-        .cloud-panel { display: none; }
-        .cloud-panel.active { display: block; }
+
+            .cloud-panel.active {
+                display: block;
+            }
 
         .cloud-service-grid {
             display: grid;
@@ -584,22 +678,31 @@
             position: relative;
             overflow: hidden;
         }
-        .cloud-service-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0;
-            width: 3px; height: 100%;
-            border-radius: 3px 0 0 3px;
-        }
-        .cloud-service-card.azure-card::before { background: linear-gradient(180deg, #0078d4, #50e6ff); }
-        .cloud-service-card.google-card::before { background: linear-gradient(180deg, #4285f4, #0f9d58); }
 
-        .cloud-service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-            border-color: #cbd5e1;
-            background: white;
-        }
+            .cloud-service-card::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .cloud-service-card.azure-card::before {
+                background: linear-gradient(180deg, #0078d4, #50e6ff);
+            }
+
+            .cloud-service-card.google-card::before {
+                background: linear-gradient(180deg, #4285f4, #0f9d58);
+            }
+
+            .cloud-service-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+                border-color: #cbd5e1;
+                background: white;
+            }
 
         .cloud-icon-wrap {
             width: 42px;
@@ -611,21 +714,35 @@
             flex-shrink: 0;
             font-size: 1.2rem;
         }
-        .azure-icon { background: linear-gradient(135deg, #e8f4fd, #c7e3f8); color: #0078d4; }
-        .google-icon { background: linear-gradient(135deg, #e8f0fe, #d2e3fc); color: #4285f4; }
 
-        .cloud-service-info { flex: 1; min-width: 0; }
+        .azure-icon {
+            background: linear-gradient(135deg, #e8f4fd, #c7e3f8);
+            color: #0078d4;
+        }
+
+        .google-icon {
+            background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+            color: #4285f4;
+        }
+
+        .cloud-service-info {
+            flex: 1;
+            min-width: 0;
+        }
+
         .cloud-service-name {
             font-weight: 700;
             font-size: 0.92rem;
             color: var(--dark);
             margin-bottom: 4px;
         }
+
         .cloud-service-desc {
             font-size: 0.8rem;
             color: #64748b;
             line-height: 1.5;
         }
+
         .cloud-service-tag {
             display: inline-block;
             margin-top: 7px;
@@ -635,15 +752,51 @@
             font-weight: 600;
             letter-spacing: 0.4px;
         }
-        .tag-storage   { background: #eff6ff; color: #1d4ed8; }
-        .tag-database  { background: #f0fdf4; color: #166534; }
-        .tag-ai        { background: #fdf4ff; color: #7e22ce; }
-        .tag-network   { background: #fff7ed; color: #9a3412; }
-        .tag-messaging { background: #fefce8; color: #854d0e; }
-        .tag-devops    { background: #f0f9ff; color: #0369a1; }
-        .tag-maps      { background: #ecfdf5; color: #065f46; }
-        .tag-security  { background: #fef2f2; color: #991b1b; }
-        .tag-sdk       { background: #f5f3ff; color: #5b21b6; }
+
+        .tag-storage {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .tag-database {
+            background: #f0fdf4;
+            color: #166534;
+        }
+
+        .tag-ai {
+            background: #fdf4ff;
+            color: #7e22ce;
+        }
+
+        .tag-network {
+            background: #fff7ed;
+            color: #9a3412;
+        }
+
+        .tag-messaging {
+            background: #fefce8;
+            color: #854d0e;
+        }
+
+        .tag-devops {
+            background: #f0f9ff;
+            color: #0369a1;
+        }
+
+        .tag-maps {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .tag-security {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+
+        .tag-sdk {
+            background: #f5f3ff;
+            color: #5b21b6;
+        }
 
 
 
@@ -674,10 +827,10 @@
             padding: 20px;
         }
 
-        .yt-modal-overlay.show {
-            display: flex;
-            opacity: 1;
-        }
+            .yt-modal-overlay.show {
+                display: flex;
+                opacity: 1;
+            }
 
         .yt-modal-box {
             background: linear-gradient(135deg, #0f172a, #1e1b4b);
@@ -714,10 +867,10 @@
             gap: 10px;
         }
 
-        .yt-modal-title i {
-            color: #ff0000;
-            font-size: 1.4rem;
-        }
+            .yt-modal-title i {
+                color: #ff0000;
+                font-size: 1.4rem;
+            }
 
         .yt-modal-close {
             background: rgba(255,255,255,0.08);
@@ -734,11 +887,11 @@
             font-size: 1.2rem;
         }
 
-        .yt-modal-close:hover {
-            background: rgba(239,68,68,0.2);
-            color: #ef4444;
-            border-color: rgba(239,68,68,0.3);
-        }
+            .yt-modal-close:hover {
+                background: rgba(239,68,68,0.2);
+                color: #ef4444;
+                border-color: rgba(239,68,68,0.3);
+            }
 
         .yt-modal-body {
             position: relative;
@@ -748,14 +901,14 @@
             background: #000;
         }
 
-        .yt-modal-body iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+            .yt-modal-body iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
 
         .yt-modal-footer {
             padding: 16px 24px;
@@ -786,11 +939,11 @@
             transition: all 0.3s ease;
         }
 
-        .yt-open-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(220,38,38,0.4);
-            color: white;
-        }
+            .yt-open-link:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 6px 20px rgba(220,38,38,0.4);
+                color: white;
+            }
 
         .yt-cert-btn {
             display: inline-flex;
@@ -809,13 +962,15 @@
             text-decoration: none;
         }
 
-        .yt-cert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220,38,38,0.4);
-            color: white;
-        }
+            .yt-cert-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(220,38,38,0.4);
+                color: white;
+            }
 
-        .yt-cert-btn i { font-size: 1.1rem; }
+            .yt-cert-btn i {
+                font-size: 1.1rem;
+            }
 
         /* ===== IMAGE / CERTIFICATE MODAL ===== */
         .cert-btn {
@@ -835,13 +990,15 @@
             text-decoration: none;
         }
 
-        .cert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-            color: white;
-        }
+            .cert-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+                color: white;
+            }
 
-        .cert-btn i { font-size: 1.1rem; }
+            .cert-btn i {
+                font-size: 1.1rem;
+            }
 
         .img-modal-overlay {
             position: fixed;
@@ -860,10 +1017,10 @@
             padding: 20px;
         }
 
-        .img-modal-overlay.show {
-            display: flex;
-            opacity: 1;
-        }
+            .img-modal-overlay.show {
+                display: flex;
+                opacity: 1;
+            }
 
         .img-modal-box {
             background: linear-gradient(135deg, #0f172a, #1e1b4b);
@@ -904,10 +1061,10 @@
             gap: 10px;
         }
 
-        .img-modal-title i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
+            .img-modal-title i {
+                color: var(--accent);
+                font-size: 1.2rem;
+            }
 
         .img-modal-close {
             background: rgba(255,255,255,0.08);
@@ -924,11 +1081,11 @@
             font-size: 1.1rem;
         }
 
-        .img-modal-close:hover {
-            background: rgba(239,68,68,0.2);
-            color: #ef4444;
-            border-color: rgba(239,68,68,0.3);
-        }
+            .img-modal-close:hover {
+                background: rgba(239,68,68,0.2);
+                color: #ef4444;
+                border-color: rgba(239,68,68,0.3);
+            }
 
         .img-modal-body {
             padding: 20px;
@@ -940,67 +1097,114 @@
             min-height: 0;
         }
 
-        .img-modal-body img {
-            max-width: 100%;
-            max-height: 75vh;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.06);
-            object-fit: contain;
-        }
+            .img-modal-body img {
+                max-width: 100%;
+                max-height: 75vh;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+                border: 1px solid rgba(255,255,255,0.06);
+                object-fit: contain;
+            }
 
         /* Responsive */
         @media (max-width: 768px) {
-        @media (max-width: 768px) {
-            .hero { padding: 50px 0 70px; }
-            .hero h1 { font-size: 2rem; }
-            .hero .subtitle { font-size: 1rem; }
-            .skill-name { min-width: 120px; font-size: 0.8rem; }
-            .section-card { padding: 20px; }
-            .emp-header { flex-direction: column; }
-            .filter-btn { font-size: 0.8rem; padding: 6px 14px; }
-            .yt-modal-box { border-radius: 14px; }
-            .yt-modal-header { padding: 14px 18px; }
-            .yt-modal-footer { padding: 12px 18px; flex-direction: column; align-items: stretch; }
-        }
+            @media (max-width: 768px) {
+                .hero {
+                    padding: 50px 0 70px;
+                }
 
-        @media (max-width: 576px) {
-            .hero h1 { font-size: 1.6rem; }
-            .contact-chip { font-size: 0.8rem; padding: 8px 14px; }
-            .skill-row { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .skill-bar-wrap { width: 100%; }
-        }
+                    .hero h1 {
+                        font-size: 2rem;
+                    }
 
-        /* No results message */
-        .no-results {
-            text-align: center;
-            padding: 50px 20px;
-            color: #94a3b8;
-        }
+                    .hero .subtitle {
+                        font-size: 1rem;
+                    }
 
-        .no-results i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
+                .skill-name {
+                    min-width: 120px;
+                    font-size: 0.8rem;
+                }
 
-        /* Counter badge */
-        .results-counter {
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            color: white;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
+                .section-card {
+                    padding: 20px;
+                }
+
+                .emp-header {
+                    flex-direction: column;
+                }
+
+                .filter-btn {
+                    font-size: 0.8rem;
+                    padding: 6px 14px;
+                }
+
+                .yt-modal-box {
+                    border-radius: 14px;
+                }
+
+                .yt-modal-header {
+                    padding: 14px 18px;
+                }
+
+                .yt-modal-footer {
+                    padding: 12px 18px;
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .hero h1 {
+                    font-size: 1.6rem;
+                }
+
+                .contact-chip {
+                    font-size: 0.8rem;
+                    padding: 8px 14px;
+                }
+
+                .skill-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 5px;
+                }
+
+                .skill-bar-wrap {
+                    width: 100%;
+                }
+            }
+
+            /* No results message */
+            .no-results {
+                text-align: center;
+                padding: 50px 20px;
+                color: #94a3b8;
+            }
+
+                .no-results i {
+                    font-size: 3rem;
+                    margin-bottom: 15px;
+                    display: block;
+                }
+
+            /* Counter badge */
+            .results-counter {
+                background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+                color: white;
+                padding: 6px 16px;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-bottom: 20px;
+            }
     </style>
-<base target="_blank">
-<base target="_blank">
+    <base target="_blank">
+    <base target="_blank">
 </head>
 <body>
 
@@ -1071,11 +1275,11 @@
                 </button>
             </div>
             <div class="yt-modal-body">
-                <iframe id="ytIframe" src=""  frameborder="0" 
-											  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-											  referrerpolicy="strict-origin-when-cross-origin" 
-											  allowfullscreen >
-				</iframe>
+                <iframe id="ytIframe" src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
             </div>
             <div class="yt-modal-footer">
                 <span class="yt-fallback-msg"><i class="bi bi-info-circle"></i> If the video does not load, click below to watch on YouTube.</span>
@@ -1163,27 +1367,27 @@
                 <span class="expertise-tag"><i class="bi bi-heart-pulse-fill"></i> Medical Sector</span>
                 <span class="expertise-tag"><i class="bi bi-building"></i> Government Projects</span>
             </div>
-			
-<!-- 
+
+            <!--
+                        <div class="mt-4 pt-4" style="border-top: 1px solid #e2e8f0;">
+                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Primary Skills</h5>
+                            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.8;">
+                                React Native, ReactJS, Delphi, C#, HTML, CSS, JavaScript, jQuery, Bootstrap, Angular 16,
+                                C# ASP.NET WebForms/MVC/Core, WPF, Silverlight, WinForms, LINQ, TSQL, WCF, Entity Framework,
+                                Fluent API, Ado.NET, WebAPI, .Net 6/8/10, Java Kotlin, Microservices, NServiceBus, MassTransit,
+                                Ocelot API Gateway, Hangfire, Docker, MSSQL, Redis, NoSQL, Elasticsearch, ESXi, CI/CD Automation
+                                (GitLab CE, Azure DevOps, Azure Kubernetes Service), TFS, GIT, GitLab, Azure, SVN, VSS
+                            </p>
+                        </div>
+            -->
+
             <div class="mt-4 pt-4" style="border-top: 1px solid #e2e8f0;">
                 <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Primary Skills</h5>
-                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.8;">
-                    React Native, ReactJS, Delphi, C#, HTML, CSS, JavaScript, jQuery, Bootstrap, Angular 16, 
-                    C# ASP.NET WebForms/MVC/Core, WPF, Silverlight, WinForms, LINQ, TSQL, WCF, Entity Framework, 
-                    Fluent API, Ado.NET, WebAPI, .Net 6/8/10, Java Kotlin, Microservices, NServiceBus, MassTransit, 
-                    Ocelot API Gateway, Hangfire, Docker, MSSQL, Redis, NoSQL, Elasticsearch, ESXi, CI/CD Automation 
-                    (GitLab CE, Azure DevOps, Azure Kubernetes Service), TFS, GIT, GitLab, Azure, SVN, VSS
-                </p>
+                <div id="skills-wordcloud"></div>
             </div>
--->
-			
-<div class="mt-4 pt-4" style="border-top: 1px solid #e2e8f0;">
-    <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Primary Skills</h5>
-    <div id="skills-wordcloud"></div>
-</div>
 
-			
-		</div>
+
+        </div>
 
         <!-- Industry Network -->
         <div class="section-card fade-in stagger-5" style="margin-bottom: 30px;">
@@ -1229,58 +1433,57 @@
                 <i class="bi bi-cloud-fill"></i>
                 Cloud &amp; Platform Experience
             </h2>
-            
-              <!-- Provider tabs -->
-              <!--
-      <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
-      
-  <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
-          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-            <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor"/>
-          </svg>
-          Microsoft Azure
-        </button>
-        
-        <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
-          <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-            <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4"/>
-            <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853"/>
-            <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05"/>
-            <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335"/>
-          </svg>
-          Google Cloud &amp; APIs
-        </button>
-        
-      </div>
--->
 
+            <!-- Provider tabs -->
+            <!--
+                  <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+
+              <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
+                      <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                        <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor"/>
+                      </svg>
+                      Microsoft Azure
+                    </button>
+
+                    <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
+                      <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                        <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4"/>
+                        <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853"/>
+                        <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05"/>
+                        <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335"/>
+                      </svg>
+                      Google Cloud &amp; APIs
+                    </button>
+
+                  </div>
+            -->
             <!-- Azure -->
             <div class="mb-4">
-               
-<!--
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
-                    <div style="background:linear-gradient(135deg,#0078d4,#005a9e); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                        <i class="bi bi-microsoft" style="color:white; font-size:1.1rem;"></i>
-                    </div>
-                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Microsoft Azure</span>
+
+                <!--
+                                <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+                                    <div style="background:linear-gradient(135deg,#0078d4,#005a9e); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                        <i class="bi bi-microsoft" style="color:white; font-size:1.1rem;"></i>
+                                    </div>
+                                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Microsoft Azure</span>
+                                </div>
+                    -->
+                <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+
+                    <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
+                        <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                            <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor" />
+                        </svg>
+                        Microsoft Azure
+                    </button>
+
+
+
                 </div>
-    -->            
-                   <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
-      
-  <button class="cloud-provider-tab" onclick="switchCloud('azure', this)">
-          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-            <path d="M80 16L0 240h64l80-136 56 96H128l-16 40h128L176 16H80z" fill="currentColor"/>
-          </svg>
-          Microsoft Azure
-        </button>
-        
-      
-        
-      </div>
-                
-                
-                
-                
+
+
+
+
                 <div style="display:flex; flex-wrap:wrap; gap:10px;">
 
                     <div class="cloud-chip" title="Azure Blob Storage — Raw file formats for backup, similar to cloud object storage">
@@ -1372,31 +1575,31 @@
 
             <!-- Google -->
             <div>
-              
-<!--
-  <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
-                    <div style="background:linear-gradient(135deg,#4285f4,#34a853); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                        <i class="bi bi-google" style="color:white; font-size:1.1rem;"></i>
-                    </div>
-                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Google Cloud &amp; APIs</span>
-                </div>
-     -->            
-                  <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
-      
 
-        
-        <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
-          <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-            <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4"/>
-            <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853"/>
-            <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05"/>
-            <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335"/>
-          </svg>
-          Google Cloud &amp; APIs
-        </button>
-        
-      </div>
-                
+                <!--
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+                                    <div style="background:linear-gradient(135deg,#4285f4,#34a853); border-radius:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                        <i class="bi bi-google" style="color:white; font-size:1.1rem;"></i>
+                                    </div>
+                                    <span style="font-size:1.1rem; font-weight:700; color:var(--dark);">Google Cloud &amp; APIs</span>
+                                </div>
+                     -->
+                <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:6px;">
+
+
+
+                    <button class="cloud-provider-tab" onclick="switchCloud('google', this)">
+                        <svg width="18" height="18" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                            <path d="M488 244c0-13.5-1.1-26.6-3.3-39.3H244v74.4h137.4c-5.9 31.9-23.8 58.9-50.7 77l81.9 63.6C459 376.5 488 314.8 488 244z" fill="#4285F4" />
+                            <path d="M244 488c68.7 0 126.4-22.8 168.5-61.9l-81.9-63.6c-22.7 15.2-51.8 24.2-86.6 24.2-66.6 0-123-44.9-143.2-105.3L15.1 344.4C56.9 431.9 144.1 488 244 488z" fill="#34A853" />
+                            <path d="M100.8 281.4A147.4 147.4 0 0 1 96 244c0-13 1.7-25.6 4.8-37.6L15.1 143.6A243.6 243.6 0 0 0 0 244c0 39.3 9.4 76.5 26.1 109.4l74.7-72z" fill="#FBBC05" />
+                            <path d="M244 96.8c37.5 0 71.2 12.9 97.7 38.2l73.3-73.3C371.6 22.8 313.9 0 244 0 144.1 0 56.9 56.1 15.1 143.6l85.7 62.8C121 145.7 177.4 96.8 244 96.8z" fill="#EA4335" />
+                        </svg>
+                        Google Cloud &amp; APIs
+                    </button>
+
+                </div>
+
                 <div style="display:flex; flex-wrap:wrap; gap:10px;">
 
                     <div class="cloud-chip" title="Google Maps SDK — Geospatial mapping integration">
@@ -1461,14 +1664,14 @@
             $('#ytModalOverlay').removeClass('show');
             $('body > *:not(.yt-modal-overlay)').removeClass('page-blur');
             document.body.style.overflow = '';
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#ytIframe').attr('src', '');
                 currentVideoId = '';
             }, 400);
         }
 
         // Close on Escape key
-        $(document).on('keydown', function(e) {
+        $(document).on('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeYtModal();
                 closeImgModal();
@@ -1489,7 +1692,7 @@
             $('#imgModalOverlay').removeClass('show');
             $('body > *:not(.yt-modal-overlay):not(.img-modal-overlay)').removeClass('page-blur');
             document.body.style.overflow = '';
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#imgModalImage').attr('src', '');
             }, 0);
         }
@@ -1530,7 +1733,7 @@
         const employment = [
             {
                 company: 'EDDI (B2B via PETAR ZH Freelance)',
-				freelance: true,
+                freelance: true,
                 date: '02.2026 – 05.2026',
                 role: 'WPF, React Native JS Developer · Team Lead',
                 tech: ['WPF', 'MVVM', 'Microsoft Prism', 'C#.Net Native 8', 'API', 'EF', 'Fluent API', 'JavaScript', 'React JSX', 'React Native'],
@@ -1540,7 +1743,7 @@
             },
             {
                 company: 'Other HEALTH (B2B via PETAR ZH Freelance)',
-				freelance: true,
+                freelance: true,
                 date: '02.2026 – 05.2026',
                 role: 'React Native Front-end JS Developer · Freelance',
                 tech: ['React Native', 'JavaScript'],
@@ -1550,7 +1753,7 @@
             },
             {
                 company: 'Other SmartDevices (B2B via PETAR ZH Freelance)',
-				freelance: true,
+                freelance: true,
                 date: '02.2026 – 05.2026',
                 role: 'KiCad Microcontroller Developer · Freelance',
                 tech: ['React Native', 'JavaScript', 'KiCad', 'BLE'],
@@ -1569,7 +1772,7 @@
             },
             {
                 company: 'Velea AD (B2B via PETAR ZH Freelance)',
-				freelance: true,
+                freelance: true,
                 date: '04.2025 – 01.2026',
                 role: 'Architect Freelance',
                 tech: ['C#.Net', 'Windows Service', 'Remote Desktop Monitoring Tool'],
@@ -1588,7 +1791,7 @@
             },
             {
                 company: 'MVINE UK LTD (B2B via PETAR ZH Freelance)',
-				freelance: true,
+                freelance: true,
                 date: '07.2020 – 09.2022',
                 role: 'JavaScript Freelancer · Front-end Developer · Team Lead',
                 tech: ['ElectronJS', 'ReactJS', 'React Native', 'JavaScript', 'CSS Bootstrap', 'Google Maps SDK', 'Docker', 'Kubernetes', 'Terraform', 'C#.Net Native 8', 'Entity Framework Core', 'Fluent API'],
@@ -1783,20 +1986,20 @@
             const container = $('#skills-container');
             skills.forEach((skill, index) => {
                 const html = `
-                    <div class="skill-row">
-                        <div class="skill-name">${skill.name}</div>
-                        <div class="skill-bar-wrap">
-                            <div class="skill-bar" data-width="${skill.width}" style="width: 0%"></div>
-                        </div>
-                        <div class="skill-years">${skill.years}Y</div>
-                    </div>
-                `;
+                                        <div class="skill-row">
+                                            <div class="skill-name">${skill.name}</div>
+                                            <div class="skill-bar-wrap">
+                                                <div class="skill-bar" data-width="${skill.width}" style="width: 0%"></div>
+                                            </div>
+                                            <div class="skill-years">${skill.years}Y</div>
+                                        </div>
+                                    `;
                 container.append(html);
             });
 
             // Animate bars
             setTimeout(() => {
-                $('.skill-bar').each(function() {
+                $('.skill-bar').each(function () {
                     $(this).css('width', $(this).data('width') + '%');
                 });
             }, 500);
@@ -1807,12 +2010,12 @@
             const container = $('#achievements-container');
             achievements.forEach(ach => {
                 const html = `
-                    <div class="achievement-card">
-                        <div class="ach-client">${ach.client}</div>
-                        <div class="ach-role">${ach.role}</div>
-                        <div class="ach-desc">${ach.desc}</div>
-                    </div>
-                `;
+                                        <div class="achievement-card">
+                                            <div class="ach-client">${ach.client}</div>
+                                            <div class="ach-role">${ach.role}</div>
+                                            <div class="ach-desc">${ach.desc}</div>
+                                        </div>
+                                    `;
                 container.append(html);
             });
         }
@@ -1861,11 +2064,11 @@
             Object.entries(sectors).forEach(([key, data]) => {
                 const icon = sectorIcons[key] || 'bi-tag-fill';
                 const html = `
-                    <button class="filter-btn" data-sector="${key}">
-                        <i class="bi ${icon}"></i> ${data.label}
-                        <span class="badge-count">${data.count}</span>
-                    </button>
-                `;
+                                        <button class="filter-btn" data-sector="${key}">
+                                            <i class="bi ${icon}"></i> ${data.label}
+                                            <span class="badge-count">${data.count}</span>
+                                        </button>
+                                    `;
                 container.append(html);
             });
 
@@ -1883,19 +2086,19 @@
                 const sectorTags = job.sectors.map((s, i) => `<span class="sector-tag ${job.sectorClasses[i]}">${s}</span>`).join('');
 
                 const html = `
-                    <div class="employment-card${job.freelance ? ' freelance' : ''}" data-sectors="${job.sectors.map(s => s.toLowerCase()).join(',')}">
-                        <div class="emp-header">
-                            <div>
-                                <div class="emp-company">${job.company}</div>
-                                <div class="emp-role">${job.role}</div>
-                            </div>
-                            <div class="emp-date">${job.date}</div>
-                        </div>
-                        <div class="emp-tech">${techTags}</div>
-                        <div class="emp-sector">${sectorTags}</div>
-                        ${job.description ? `<div style="margin-top: 10px; color: #64748b; font-size: 0.9rem; position: relative; z-index: 1;"><i class="bi bi-info-circle" style="color: var(--primary);"></i> ${job.description}</div>` : ''}
-                    </div>
-                `;
+                                        <div class="employment-card${job.freelance ? ' freelance' : ''}" data-sectors="${job.sectors.map(s => s.toLowerCase()).join(',')}">
+                                            <div class="emp-header">
+                                                <div>
+                                                    <div class="emp-company">${job.company}</div>
+                                                    <div class="emp-role">${job.role}</div>
+                                                </div>
+                                                <div class="emp-date">${job.date}</div>
+                                            </div>
+                                            <div class="emp-tech">${techTags}</div>
+                                            <div class="emp-sector">${sectorTags}</div>
+                                            ${job.description ? `<div style="margin-top: 10px; color: #64748b; font-size: 0.9rem; position: relative; z-index: 1;"><i class="bi bi-info-circle" style="color: var(--primary);"></i> ${job.description}</div>` : ''}
+                                        </div>
+                                    `;
                 container.append(html);
             });
         }
@@ -1904,7 +2107,7 @@
         function filterEmployment(sector) {
             let visibleCount = 0;
 
-            $('.employment-card').each(function() {
+            $('.employment-card').each(function () {
                 const cardSectors = $(this).data('sectors').split(',');
                 if (sector === 'all' || cardSectors.includes(sector)) {
                     $(this).removeClass('hidden-card').hide().fadeIn(300);
@@ -1924,14 +2127,14 @@
         }
 
         // ===== EVENT HANDLERS =====
-        $(document).ready(function() {
+        $(document).ready(function () {
             renderSkills();
             renderAchievements();
             renderFilters();
             renderEmployment();
 
             // Filter click handler
-            $(document).on('click', '.filter-btn', function() {
+            $(document).on('click', '.filter-btn', function () {
                 $('.filter-btn').removeClass('active');
                 $(this).addClass('active');
                 const sector = $(this).data('sector');
@@ -1943,342 +2146,356 @@
 
 
 
-<!-- D3 v4 -->
-<script src="https://d3js.org/d3.v4.js"></script>
-<!-- d3-cloud layout -->
-<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
-<script>
-(function () {
-    var words = [
-        { word: "React Native",   size: 38 },
-        { word: "ReactJS",        size: 36 },
-        { word: "C#",             size: 42 },
-        { word: "ASP.NET Core",   size: 36 },
-        { word: ".Net 6/8/10",    size: 32 },
-        { word: "JavaScript",     size: 35 },
-        { word: "HTML",           size: 28 },
-        { word: "CSS",            size: 26 },
-        { word: "Angular 16",     size: 30 },
-        { word: "TypeScript",     size: 28 },
-        { word: "jQuery",         size: 24 },
-        { word: "Bootstrap",      size: 24 },
-        { word: "Delphi",         size: 28 },
-        { word: "WPF",            size: 26 },
-        { word: "WinForms",       size: 22 },
-        { word: "Silverlight",    size: 20 },
-        { word: "WCF",            size: 20 },
-        { word: "LINQ",           size: 22 },
-        { word: "TSQL",           size: 24 },
-        { word: "Entity Framework", size: 28 },
-        { word: "Fluent API",     size: 20 },
-        { word: "Ado.NET",        size: 20 },
-        { word: "WebAPI",         size: 26 },
-        { word: "Java Kotlin",    size: 26 },
-        { word: "Microservices",  size: 34 },
-        { word: "NServiceBus",    size: 22 },
-        { word: "MassTransit",    size: 22 },
-        { word: "Ocelot",         size: 16 },
-		{ word: "YARP",           size: 14 },
-        { word: "Hangfire",       size: 20 },
-        { word: "Docker",         size: 32 },
-        { word: "MSSQL",          size: 28 },
-        { word: "Redis",          size: 26 },
-        { word: "NoSQL",          size: 24 },
-		{ word: "Media Source API",size: 24 },
-		{ word: "Bootstrap",size: 24 },
-		{ word: "OpenCvSharp4",size: 14 },
-        { word: "Computer Vision",size: 34 },
-		
-        { word: "ASP.Net WebForms",size: 20 },
-		{ word: "ASP.NET MVC",size: 26 },
-        { word: "AI Translation",size: 24 },
-		{ word: "Google Maps SDK",size: 14 },
-        { word: "Elasticsearch",  size: 26 },
-        { word: "ESXi",           size: 20 },
-        { word: "CI/CD",          size: 30 },
-        { word: "GitLab CE",      size: 24 },
-        { word: "Azure DevOps",   size: 28 },
+    <!-- D3 v4 -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- d3-cloud layout -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <script>
+        (function () {
+            var words = [
+                { word: "React Native", size: 38 },
+                { word: "ReactJS", size: 36 },
+                { word: "C#", size: 42 },
+                { word: "ASP.NET Core", size: 36 },
+                { word: ".Net 6/8/10", size: 32 },
+                { word: "JavaScript", size: 35 },
+                { word: "HTML", size: 28 },
+                { word: "CSS", size: 26 },
+                { word: "Angular 16", size: 30 },
+                { word: "TypeScript", size: 28 },
+                { word: "jQuery", size: 24 },
+                { word: "Bootstrap", size: 24 },
+                { word: "Delphi", size: 28 },
+                { word: "WPF", size: 26 },
+                { word: "WinForms", size: 22 },
+                { word: "Silverlight", size: 20 },
+                { word: "WCF", size: 20 },
+                { word: "LINQ", size: 22 },
+                { word: "TSQL", size: 24 },
+                { word: "Entity Framework", size: 28 },
+                { word: "Fluent API", size: 20 },
+                { word: "Ado.NET", size: 20 },
+                { word: "WebAPI", size: 26 },
+                { word: "Java Kotlin", size: 26 },
+                { word: "Microservices", size: 34 },
+                { word: "NServiceBus", size: 22 },
+                { word: "MassTransit", size: 22 },
+                { word: "Ocelot", size: 16 },
+                { word: "YARP", size: 14 },
+                { word: "Hangfire", size: 20 },
+                { word: "Docker", size: 32 },
+                { word: "MSSQL", size: 28 },
+                { word: "Redis", size: 26 },
+                { word: "NoSQL", size: 24 },
+                { word: "Media Source API", size: 24 },
+                { word: "Bootstrap", size: 24 },
+                { word: "OpenCvSharp4", size: 14 },
+                { word: "Computer Vision", size: 34 },
 
-	    { word: "Kubernetes",     size: 30 },
-		{ word: "Terraform",      size: 12 },
-        { word: "Ansible",        size: 12 },
+                { word: "ASP.Net WebForms", size: 20 },
+                { word: "ASP.NET MVC", size: 26 },
+                { word: "AI Translation", size: 24 },
+                { word: "Google Maps SDK", size: 14 },
+                { word: "Elasticsearch", size: 26 },
+                { word: "ESXi", size: 20 },
+                { word: "CI/CD", size: 30 },
+                { word: "GitLab CE", size: 24 },
+                { word: "Azure DevOps", size: 28 },
 
-		{ word: "Streaming Brokers",        size: 12 },
-		{ word: "Message Brokers",        size: 12 },
-		{ word: "NService Bus",        size: 12 },
-		{ word: "RabbitMQ",        size: 12 },
-	    { word: "Azure Service Bus",        size: 12 },
-		
-        { word: "GIT",            size: 26 },
-        { word: "Azure",          size: 30 },
-        { word: "SVN",            size: 18 },
-        { word: "TFS",            size: 18 },
-        { word: "VSS",            size: 16 }
-    ];
+                { word: "Kubernetes", size: 30 },
+                { word: "Terraform", size: 12 },
+                { word: "Ansible", size: 12 },
 
-    var palette = ["#2563eb","#7c3aed","#06b6d4","#10b981","#f59e0b","#ef4444","#0f172a","#475569"];
+                { word: "Streaming Brokers", size: 12 },
+                { word: "Message Brokers", size: 12 },
+                { word: "NService Bus", size: 12 },
+                { word: "RabbitMQ", size: 12 },
+                { word: "Azure Service Bus", size: 12 },
 
-    var container = document.getElementById("skills-wordcloud");
-    var W = container.clientWidth || 700;
-    var H = 340;
+                { word: "GIT", size: 26 },
+                { word: "Azure", size: 30 },
+                { word: "SVN", size: 18 },
+                { word: "TFS", size: 18 },
+                { word: "VSS", size: 16 }
+            ];
 
-    var layout = d3.layout.cloud()
-        .size([W, H])
-        .words(words.map(function(d) { return { text: d.word, size: d.size }; }))
-        .padding(6)
-        .rotate(function() { return ~~(Math.random() * 2) * 90; })
-        .font("Inter, sans-serif")
-        .fontSize(function(d) { return d.size; })
-        .on("end", draw);
+            var palette = ["#2563eb", "#7c3aed", "#06b6d4", "#10b981", "#f59e0b", "#ef4444", "#0f172a", "#475569"];
 
-    layout.start();
+            var container = document.getElementById("skills-wordcloud");
+            var W = container.clientWidth || 700;
+            var H = 340;
 
-    function draw(wordsOut) {
-        d3.select("#skills-wordcloud")
-          .append("svg")
-            .attr("width", W)
-            .attr("height", H)
-            .style("display", "block")
-            .style("margin", "0 auto")
-          .append("g")
-            .attr("transform", "translate(" + W / 2 + "," + H / 2 + ")")
-          .selectAll("text")
-            .data(wordsOut)
-          .enter().append("text")
-            .style("font-family", "Inter, sans-serif")
-            .style("font-weight", "700")
-            .style("fill", function(_, i) { return palette[i % palette.length]; })
-            .style("cursor", "default")
-            .attr("text-anchor", "middle")
-            .attr("font-size", function(d) { return d.size + "px"; })
-            .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-            })
-            .text(function(d) { return d.text; })
-            .on("mouseover", function() {
-                d3.select(this).style("opacity", 0.7);
-            })
-            .on("mouseout", function() {
-                d3.select(this).style("opacity", 1);
-            });
-    }
-})();
-</script>
+            var layout = d3.layout.cloud()
+                .size([W, H])
+                .words(words.map(function (d) { return { text: d.word, size: d.size }; }))
+                .padding(6)
+                .rotate(function () { return ~~(Math.random() * 2) * 90; })
+                .font("Inter, sans-serif")
+                .fontSize(function (d) { return d.size; })
+                .on("end", draw);
 
+            layout.start();
 
-
-<script>
-/* ===== INDUSTRY NETWORK (D3 v4 — reuses already-loaded library) ===== */
-(function () {
-
-    /* ── SECTOR PALETTE ───────────────────────────────────────────── */
-    var COLORS = {
-        me:        '#2563eb',
-        oil:       '#ef4444',
-        financial: '#10b981',
-        health:    '#ec4899',
-        retail:    '#06b6d4',
-        nuclear:   '#84cc16'
-    };
-    var LABELS = {
-        me:        'You',
-        oil:       'Oil & Energy',
-        financial: 'Financial',
-        health:    'Health / Bio',
-        retail:    'Retail / Tech',
-        nuclear:   'Nuclear / NDT'
-    };
-
-    /* ── NODES ────────────────────────────────────────────────────── */
-    var nodes = [
-        { id: 'Me',                    sector: 'me',        flag: '🇧🇬', company: 'Petar Evgeniev',        role: 'Fullstack Developer' },
-        { id: 'Shell Royal Dutch',     sector: 'oil',       flag: '🇳🇱', company: 'Shell Royal Dutch',     role: 'Cloud Components Developer' },
-        { id: 'Rompetrol',             sector: 'oil',       flag: '🇷🇴', company: 'Rompetrol Romania',     role: 'Desktop App Lead Developer' },
-        { id: 'Kongsberg',             sector: 'oil',       flag: '🇳🇴', company: 'Kongsberg Norway',      role: 'WPF & Silverlight Developer' },
-        { id: 'Petrobras',             sector: 'oil',       flag: '🇧🇷', company: 'Petrobras Brasil',      role: 'UI Component Developer' },
-        { id: 'London Stock Exchange', sector: 'financial', flag: '🇬🇧', company: 'London Stock Exchange', role: 'ElectronJS App Lead Developer' },
-        { id: 'NN Bulgaria',           sector: 'financial', flag: '🇧🇬', company: 'NN Bulgaria',           role: 'WCF & WebForm Developer' },
-        { id: 'Provident Funding',     sector: 'financial', flag: '🇺🇸', company: 'Provident Funding USA', role: 'Fintech Module Developer' },
-        { id: 'TMF Japan',             sector: 'financial', flag: '🇯🇵', company: 'TMF Japan',             role: 'JavaScript Library Developer' },
-        { id: 'Promega USA',           sector: 'health',    flag: '🇺🇸', company: 'Promega USA',           role: 'DNA Mathematics Analyst' },
-        { id: 'Videnov Bulgaria',      sector: 'retail',    flag: '🇧🇬', company: 'Videnov Bulgaria',      role: 'Desktop App Lead Developer' }
-    ];
-
-    /* ── LINKS ────────────────────────────────────────────────────── */
-    var links = [];
-    // Me → every company
-    nodes.forEach(function(n) {
-        if (n.id !== 'Me') links.push({ source: 'Me', target: n.id, type: 'me' });
-    });
-    // intra-sector pairs
-    function addSectorPairs(sector) {
-        var ids = nodes.filter(function(n){ return n.sector === sector; }).map(function(n){ return n.id; });
-        for (var i = 0; i < ids.length; i++)
-            for (var j = i + 1; j < ids.length; j++)
-                links.push({ source: ids[i], target: ids[j], type: sector });
-    }
-    addSectorPairs('oil');
-    addSectorPairs('financial');
-
-    /* ── SVG SETUP ────────────────────────────────────────────────── */
-    var wrap = document.getElementById('network-graph');
-    var svgEl = document.getElementById('network-svg');
-    var tip   = document.getElementById('network-tooltip');
-    var W = Math.max(wrap.clientWidth || 760, 340);
-    var H = Math.max(Math.round(W * 0.55), 380);
-    svgEl.setAttribute('height', H);
-
-    var svg = d3.select('#network-svg');
-
-    /* glow filter */
-    var defs = svg.append('defs');
-    defs.append('filter').attr('id', 'net-glow').html(
-        '<feGaussianBlur stdDeviation="3" result="b"/>' +
-        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
-    );
-
-    /* zoom/pan layer */
-    var g = svg.append('g');
-    svg.call(d3.zoom().scaleExtent([0.35, 3]).on('zoom', function() {
-        g.attr('transform', d3.event.transform);
-    }));
-
-    /* ── SIMULATION ───────────────────────────────────────────────── */
-    var simulation = d3.forceSimulation(nodes)
-        .force('link',      d3.forceLink(links).id(function(d){ return d.id; })
-                              .distance(function(d){ return d.type === 'me' ? 140 : 72; })
-                              .strength(0.55))
-        .force('charge',    d3.forceManyBody().strength(-350))
-        .force('center',    d3.forceCenter(W / 2, H / 2))
-        .force('collision', d3.forceCollide(42));
-
-    /* ── LINKS ────────────────────────────────────────────────────── */
-    var linkSel = g.append('g').attr('class', 'net-links')
-        .selectAll('line').data(links).enter().append('line')
-        .attr('stroke', function(d){ return d.type === 'me' ? '#cbd5e1' : COLORS[d.type] || '#94a3b8'; })
-        .attr('stroke-width', function(d){ return d.type === 'me' ? 1.2 : 2.4; })
-        .attr('stroke-opacity', function(d){ return d.type === 'me' ? 0.45 : 0.4; })
-        .attr('stroke-dasharray', function(d){ return d.type === 'me' ? '5 3' : null; });
-
-    /* ── NODE GROUPS ──────────────────────────────────────────────── */
-    var nodeG = g.append('g').attr('class', 'net-nodes')
-        .selectAll('g').data(nodes).enter().append('g')
-        .style('cursor', 'grab')
-        .call(
-            d3.drag()
-              .on('start', function(d) {
-                  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-                  d.fx = d.x; d.fy = d.y;
-                  d3.select(this).style('cursor', 'grabbing');
-              })
-              .on('drag', function(d) { d.fx = d3.event.x; d.fy = d3.event.y; })
-              .on('end',  function(d) {
-                  if (!d3.event.active) simulation.alphaTarget(0);
-                  d.fx = null; d.fy = null;
-                  d3.select(this).style('cursor', 'grab');
-              })
-        );
-
-    /* outer ring */
-    nodeG.append('circle')
-        .attr('r',    function(d){ return d.id === 'Me' ? 30 : 22; })
-        .attr('fill', function(d){ return COLORS[d.sector] || '#64748b'; })
-        .attr('fill-opacity', 0.12)
-        .attr('stroke', function(d){ return COLORS[d.sector] || '#64748b'; })
-        .attr('stroke-width', function(d){ return d.id === 'Me' ? 3 : 2; })
-        .attr('filter', function(d){ return d.id === 'Me' ? 'url(#net-glow)' : null; });
-
-    /* flag emoji */
-    nodeG.append('text')
-        .attr('text-anchor', 'middle')
-        .attr('dominant-baseline', 'central')
-        .attr('font-size', function(d){ return d.id === 'Me' ? '18px' : '14px'; })
-        .text(function(d){ return d.flag; });
-
-    /* label below node */
-    nodeG.append('text')
-        .attr('text-anchor', 'middle')
-        .attr('y', function(d){ return (d.id === 'Me' ? 30 : 22) + 14; })
-        .attr('font-family', 'Inter, sans-serif')
-        .attr('font-weight', function(d){ return d.id === 'Me' ? '800' : '600'; })
-        .attr('fill', function(d){ return d.id === 'Me' ? '#0f172a' : '#334155'; })
-        .each(function(d) {
-            var el = d3.select(this);
-            var words = d.id.split(' ');
-            if (words.length <= 2) {
-                el.attr('font-size', d.id === 'Me' ? '11px' : '9px').text(d.id);
-            } else {
-                var mid = Math.ceil(words.length / 2);
-                el.attr('font-size', '8.5px');
-                el.append('tspan').attr('x', 0).attr('dy', '0').text(words.slice(0, mid).join(' '));
-                el.append('tspan').attr('x', 0).attr('dy', '1.2em').text(words.slice(mid).join(' '));
+            function draw(wordsOut) {
+                d3.select("#skills-wordcloud")
+                    .append("svg")
+                    .attr("width", W)
+                    .attr("height", H)
+                    .style("display", "block")
+                    .style("margin", "0 auto")
+                    .append("g")
+                    .attr("transform", "translate(" + W / 2 + "," + H / 2 + ")")
+                    .selectAll("text")
+                    .data(wordsOut)
+                    .enter().append("text")
+                    .style("font-family", "Inter, sans-serif")
+                    .style("font-weight", "700")
+                    .style("fill", function (_, i) { return palette[i % palette.length]; })
+                    .style("cursor", "default")
+                    .attr("text-anchor", "middle")
+                    .attr("font-size", function (d) { return d.size + "px"; })
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function (d) { return d.text; })
+                    .on("mouseover", function () {
+                        d3.select(this).style("opacity", 0.7);
+                    })
+                    .on("mouseout", function () {
+                        d3.select(this).style("opacity", 1);
+                    });
             }
-        });
+        })();
+    </script>
 
-    /* ── TOOLTIP ──────────────────────────────────────────────────── */
-    nodeG
-        .on('mouseover', function(d) {
-            var sectorLabel = LABELS[d.sector] || d.sector;
-            var sectorColor = COLORS[d.sector] || '#64748b';
-            tip.innerHTML =
-                '<div style="font-weight:700;font-size:0.9rem;margin-bottom:3px">' + d.flag + ' ' + d.company + '</div>' +
-                '<div style="color:#94a3b8;font-size:0.8rem;margin-bottom:5px">' + d.role + '</div>' +
-                '<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.07);padding:3px 9px;border-radius:50px;">' +
-                '<span style="width:7px;height:7px;border-radius:50%;background:' + sectorColor + ';display:inline-block"></span>' +
-                '<span style="color:' + sectorColor + ';font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.8px">' + sectorLabel + '</span>' +
-                '</div>';
-            tip.style.opacity = '1';
-        })
-        .on('mousemove', function() {
-            var box = wrap.getBoundingClientRect();
-            var mx = d3.event.clientX - box.left + 14;
-            var my = d3.event.clientY - box.top  - 10;
-            // keep tooltip inside container
-            if (mx + 250 > W) mx = mx - 270;
-            tip.style.left = mx + 'px';
-            tip.style.top  = my + 'px';
-        })
-        .on('mouseout', function() {
-            tip.style.opacity = '0';
-        });
 
-    /* ── TICK ─────────────────────────────────────────────────────── */
-    simulation.on('tick', function() {
-        linkSel
-            .attr('x1', function(d){ return d.source.x; })
-            .attr('y1', function(d){ return d.source.y; })
-            .attr('x2', function(d){ return d.target.x; })
-            .attr('y2', function(d){ return d.target.y; });
-        nodeG.attr('transform', function(d){ return 'translate(' + d.x + ',' + d.y + ')'; });
-    });
 
-    /* ── HINT TEXT ────────────────────────────────────────────────── */
-    svg.append('text')
-        .attr('x', W - 10).attr('y', H - 8)
-        .attr('text-anchor', 'end')
-        .attr('font-family', 'Inter, sans-serif')
-        .attr('font-size', '10px')
-        .attr('fill', '#cbd5e1')
-        .text('scroll to zoom · drag nodes · drag canvas to pan');
+    <script>
+        /* ===== INDUSTRY NETWORK (D3 v4 — reuses already-loaded library) ===== */
+        (function () {
 
-    /* ── LEGEND ───────────────────────────────────────────────────── */
-    var legendEl = document.getElementById('network-legend');
-    Object.keys(LABELS).forEach(function(key) {
-        var span = document.createElement('span');
-        span.style.cssText =
-            'display:inline-flex;align-items:center;gap:6px;' +
-            'background:white;border:1.5px solid ' + COLORS[key] + ';' +
-            'padding:4px 12px;border-radius:50px;' +
-            'font-size:0.78rem;font-weight:600;' +
-            'color:' + COLORS[key] + ';font-family:Inter,sans-serif;';
-        span.innerHTML =
-            '<span style="width:8px;height:8px;border-radius:50%;background:' + COLORS[key] + ';display:inline-block"></span>' +
-            LABELS[key];
-        legendEl.appendChild(span);
-    });
+            /* ── SECTOR PALETTE ───────────────────────────────────────────── */
+            var COLORS = {
+                me: '#2563eb',
+                oil: '#ef4444',
+                financial: '#10b981',
+                health: '#ec4899',
+                retail: '#06b6d4',
+                nuclear: '#84cc16'
+            };
+            var LABELS = {
+                me: 'You',
+                oil: 'Oil & Energy',
+                financial: 'Financial',
+                health: 'Health / Bio',
+                retail: 'Retail / Tech',
+                nuclear: 'Nuclear / NDT'
+            };
 
-})();
-</script>
+            /* ── NODES ────────────────────────────────────────────────────── */
+            var nodes = [
+                { id: 'Me', sector: 'me', flag: '🇧🇬', company: 'Petar Evgeniev', role: 'Fullstack Developer' },
+                { id: 'Shell Royal Dutch', sector: 'oil', flag: '🇳🇱', company: 'Shell Royal Dutch', role: 'Cloud Components Developer' },
+                { id: 'Rompetrol', sector: 'oil', flag: '🇷🇴', company: 'Rompetrol Romania', role: 'Desktop App Lead Developer' },
+                { id: 'Kongsberg', sector: 'oil', flag: '🇳🇴', company: 'Kongsberg Norway', role: 'WPF & Silverlight Developer' },
+                { id: 'Petrobras', sector: 'oil', flag: '🇧🇷', company: 'Petrobras Brasil', role: 'UI Component Developer' },
+                { id: 'London Stock Exchange', sector: 'financial', flag: '🇬🇧', company: 'London Stock Exchange', role: 'ElectronJS App Lead Developer' },
+                { id: 'NN Bulgaria', sector: 'financial', flag: '🇧🇬', company: 'NN Bulgaria', role: 'WCF & WebForm Developer' },
+                { id: 'Provident Funding', sector: 'financial', flag: '🇺🇸', company: 'Provident Funding USA', role: 'Fintech Module Developer' },
+                { id: 'TMF Japan', sector: 'financial', flag: '🇯🇵', company: 'TMF Japan', role: 'JavaScript Library Developer' },
+                { id: 'Promega USA', sector: 'health', flag: '🇺🇸', company: 'Promega USA', role: 'DNA Mathematics Analyst' },
+                { id: 'Videnov Bulgaria', sector: 'retail', flag: '🇧🇬', company: 'Videnov Bulgaria', role: 'Desktop App Lead Developer' }
+            ];
+
+            /* ── LINKS ────────────────────────────────────────────────────── */
+            var links = [];
+            // Me → every company
+            nodes.forEach(function (n) {
+                if (n.id !== 'Me') links.push({ source: 'Me', target: n.id, type: 'me' });
+            });
+            // intra-sector pairs
+            function addSectorPairs(sector) {
+                var ids = nodes.filter(function (n) { return n.sector === sector; }).map(function (n) { return n.id; });
+                for (var i = 0; i < ids.length; i++)
+                    for (var j = i + 1; j < ids.length; j++)
+                        links.push({ source: ids[i], target: ids[j], type: sector });
+            }
+            addSectorPairs('oil');
+            addSectorPairs('financial');
+
+            /* ── SVG SETUP ────────────────────────────────────────────────── */
+            var wrap = document.getElementById('network-graph');
+            var svgEl = document.getElementById('network-svg');
+            var tip = document.getElementById('network-tooltip');
+            var W = Math.max(wrap.clientWidth || 760, 340);
+            var H = Math.max(Math.round(W * 0.55), 380);
+            svgEl.setAttribute('height', H);
+
+            var svg = d3.select('#network-svg');
+
+            /* glow filter */
+            var defs = svg.append('defs');
+            defs.append('filter').attr('id', 'net-glow').html(
+                '<feGaussianBlur stdDeviation="3" result="b"/>' +
+                '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+            );
+
+            /* zoom/pan layer */
+            var g = svg.append('g');
+            svg.call(d3.zoom().scaleExtent([0.35, 3]).on('zoom', function () {
+                g.attr('transform', d3.event.transform);
+            }));
+
+            /* ── SIMULATION ───────────────────────────────────────────────── */
+            var simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(function (d) { return d.id; })
+                    .distance(function (d) { return d.type === 'me' ? 140 : 72; })
+                    .strength(0.55))
+                .force('charge', d3.forceManyBody().strength(-350))
+                .force('center', d3.forceCenter(W / 2, H / 2))
+                .force('collision', d3.forceCollide(42));
+
+            /* ── LINKS ────────────────────────────────────────────────────── */
+            var linkSel = g.append('g').attr('class', 'net-links')
+                .selectAll('line').data(links).enter().append('line')
+                .attr('stroke', function (d) { return d.type === 'me' ? '#cbd5e1' : COLORS[d.type] || '#94a3b8'; })
+                .attr('stroke-width', function (d) { return d.type === 'me' ? 1.2 : 2.4; })
+                .attr('stroke-opacity', function (d) { return d.type === 'me' ? 0.45 : 0.4; })
+                .attr('stroke-dasharray', function (d) { return d.type === 'me' ? '5 3' : null; });
+
+            /* ── NODE GROUPS ──────────────────────────────────────────────── */
+            var nodeG = g.append('g').attr('class', 'net-nodes')
+                .selectAll('g').data(nodes).enter().append('g')
+                .style('cursor', 'grab')
+                .call(
+                    d3.drag()
+                        .on('start', function (d) {
+                            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                            d.fx = d.x; d.fy = d.y;
+                            d3.select(this).style('cursor', 'grabbing');
+                        })
+                        .on('drag', function (d) { d.fx = d3.event.x; d.fy = d3.event.y; })
+                        .on('end', function (d) {
+                            if (!d3.event.active) simulation.alphaTarget(0);
+                            d.fx = null; d.fy = null;
+                            d3.select(this).style('cursor', 'grab');
+                        })
+                );
+
+            /* outer ring */
+            nodeG.append('circle')
+                .attr('r', function (d) { return d.id === 'Me' ? 30 : 22; })
+                .attr('fill', function (d) { return COLORS[d.sector] || '#64748b'; })
+                .attr('fill-opacity', 0.12)
+                .attr('stroke', function (d) { return COLORS[d.sector] || '#64748b'; })
+                .attr('stroke-width', function (d) { return d.id === 'Me' ? 3 : 2; })
+                .attr('filter', function (d) { return d.id === 'Me' ? 'url(#net-glow)' : null; });
+
+            /* flag emoji */
+            nodeG.append('text')
+                .attr('text-anchor', 'middle')
+                .attr('dominant-baseline', 'central')
+                .attr('font-size', function (d) { return d.id === 'Me' ? '18px' : '14px'; })
+                .text(function (d) { return d.flag; });
+
+            /* label below node */
+            nodeG.append('text')
+                .attr('text-anchor', 'middle')
+                .attr('y', function (d) { return (d.id === 'Me' ? 30 : 22) + 14; })
+                .attr('font-family', 'Inter, sans-serif')
+                .attr('font-weight', function (d) { return d.id === 'Me' ? '800' : '600'; })
+                .attr('fill', function (d) { return d.id === 'Me' ? '#0f172a' : '#334155'; })
+                .each(function (d) {
+                    var el = d3.select(this);
+                    var words = d.id.split(' ');
+                    if (words.length <= 2) {
+                        el.attr('font-size', d.id === 'Me' ? '11px' : '9px').text(d.id);
+                    } else {
+                        var mid = Math.ceil(words.length / 2);
+                        el.attr('font-size', '8.5px');
+                        el.append('tspan').attr('x', 0).attr('dy', '0').text(words.slice(0, mid).join(' '));
+                        el.append('tspan').attr('x', 0).attr('dy', '1.2em').text(words.slice(mid).join(' '));
+                    }
+                });
+
+            /* ── TOOLTIP ──────────────────────────────────────────────────── */
+            nodeG
+                .on('mouseover', function (d) {
+                    var sectorLabel = LABELS[d.sector] || d.sector;
+                    var sectorColor = COLORS[d.sector] || '#64748b';
+                    tip.innerHTML =
+                        '<div style="font-weight:700;font-size:0.9rem;margin-bottom:3px">' + d.flag + ' ' + d.company + '</div>' +
+                        '<div style="color:#94a3b8;font-size:0.8rem;margin-bottom:5px">' + d.role + '</div>' +
+                        '<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.07);padding:3px 9px;border-radius:50px;">' +
+                        '<span style="width:7px;height:7px;border-radius:50%;background:' + sectorColor + ';display:inline-block"></span>' +
+                        '<span style="color:' + sectorColor + ';font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.8px">' + sectorLabel + '</span>' +
+                        '</div>';
+                    tip.style.opacity = '1';
+                })
+                .on('mousemove', function () {
+                    var box = wrap.getBoundingClientRect();
+                    var mx = d3.event.clientX - box.left + 14;
+                    var my = d3.event.clientY - box.top - 10;
+                    // keep tooltip inside container
+                    if (mx + 250 > W) mx = mx - 270;
+                    tip.style.left = mx + 'px';
+                    tip.style.top = my + 'px';
+                })
+                .on('mouseout', function () {
+                    tip.style.opacity = '0';
+                });
+
+            /* ── TICK ─────────────────────────────────────────────────────── */
+            simulation.on('tick', function () {
+                linkSel
+                    .attr('x1', function (d) { return d.source.x; })
+                    .attr('y1', function (d) { return d.source.y; })
+                    .attr('x2', function (d) { return d.target.x; })
+                    .attr('y2', function (d) { return d.target.y; });
+                nodeG.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+            });
+
+            /* ── HINT TEXT ────────────────────────────────────────────────── */
+            svg.append('text')
+                .attr('x', W - 10).attr('y', H - 8)
+                .attr('text-anchor', 'end')
+                .attr('font-family', 'Inter, sans-serif')
+                .attr('font-size', '10px')
+                .attr('fill', '#cbd5e1')
+                .text('scroll to zoom · drag nodes · drag canvas to pan');
+
+            /* ── LEGEND ───────────────────────────────────────────────────── */
+            var legendEl = document.getElementById('network-legend');
+            Object.keys(LABELS).forEach(function (key) {
+                var span = document.createElement('span');
+                span.style.cssText =
+                    'display:inline-flex;align-items:center;gap:6px;' +
+                    'background:white;border:1.5px solid ' + COLORS[key] + ';' +
+                    'padding:4px 12px;border-radius:50px;' +
+                    'font-size:0.78rem;font-weight:600;' +
+                    'color:' + COLORS[key] + ';font-family:Inter,sans-serif;';
+                span.innerHTML =
+                    '<span style="width:8px;height:8px;border-radius:50%;background:' + COLORS[key] + ';display:inline-block"></span>' +
+                    LABELS[key];
+                legendEl.appendChild(span);
+            });
+
+        })();
+    </script>
+
+
+
+    <script>
+
+        /* logs */
+        (function () {
+            $.get("https://www.karibi.somee.com/api/logging/log", function (data) {
+                console.log(data);
+            });
+
+        })();
+
+    </script>
 
 </body>
 </html>
