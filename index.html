@@ -1702,33 +1702,7 @@
             const params = new URLSearchParams(window.location.search);
             return params.get(name);
         }
-        
-        // ── Filter employment cards by company name (case‑insensitive substring) ──
-        function filterByCompany(companyName) {
-            let visibleCount = 0;
-            $('.employment-card').each(function () {
-                const cardText = $(this).find('.emp-company').text().toLowerCase();
-                if (companyName && cardText.includes(companyName.toLowerCase())) {
-                    $(this).removeClass('hidden-card').show();
-                    visibleCount++;
-                } else {
-                    $(this).addClass('hidden-card').hide();
-                }
-            });
-            $('#showing-count').text(visibleCount);
-            if (visibleCount === 0) {
-                $('#no-results').fadeIn(300);
-            } else {
-                $('#no-results').hide();
-            }
-            // Remove the “active” state from all sector filter buttons
-            $('.filter-btn').removeClass('active');
-        }
-
-        
-
-        
-
+                            
         // ===== DATA =====
         const skills = [
             { name: 'C#.NET', years: 13.8, width: 95 },
@@ -1804,7 +1778,7 @@
                 description: 'Design and develop SaaS translation for media translaton for movie industry.'
             },    
             {
-                company: 'Digitout Ltd.',
+                company: 'Digitout Ltd',
                 date: '04.2025 – 01.2026',
                 role: 'Web Site Programmer',
                 tech: ['C#.Net Native 8', 'API', 'EF', 'Fluent API', 'SignalR', 'JavaScript', 'React JSX'],
@@ -2168,10 +2142,28 @@
             }
         }
 
-		function filterCompany(company) {
-
-		}
-
+		// ── Filter employment cards by company name (case‑insensitive substring) ──
+        function filterByCompany(companyName) {
+            let visibleCount = 0;
+            $('.employment-card').each(function () {
+                const cardText = $(this).find('.emp-company').text().toLowerCase();
+                if (companyName && cardText.includes(companyName.toLowerCase())) {
+                    $(this).removeClass('hidden-card').show();
+                    visibleCount++;
+                } else {
+                    $(this).addClass('hidden-card').hide();
+                }
+            });
+            $('#showing-count').text(visibleCount);
+            if (visibleCount === 0) {
+                $('#no-results').fadeIn(300);
+            } else {
+                $('#no-results').hide();
+            }
+            // Remove the “active” state from all sector filter buttons
+            $('.filter-btn').removeClass('active');
+        }
+		 
         // ===== EVENT HANDLERS =====
         $(document).ready(function () {
             renderSkills();
@@ -2197,8 +2189,8 @@
            
 			
 			if (cParam && cParam.trim() !== '') {                
-				const company = '';
-				filterCompany(company);
+				const company = cParam.trim().toLowerCase();
+				filterByCompany(company);
             }
 
             if (sParam && sParam.trim() !== '') {                
@@ -2560,9 +2552,10 @@
 
         /* logs */
         (function () {
-            /* $.get("https://www.karibi.somee.com/api/logging/log", function (data) {
+			
+            $.get("https://www.karibi.somee.com/api/logging/log", function (data) {
                 console.log('OK');
-            }); */
+            }); 
 
         })();
 
