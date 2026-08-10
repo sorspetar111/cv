@@ -1697,6 +1697,36 @@
             }, 0);
         }
 
+        // ── Helper: read a query parameter by name ──
+        function getUrlParameter(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+        
+        // ── Filter employment cards by company name (case‑insensitive substring) ──
+        function filterByCompany(companyName) {
+            let visibleCount = 0;
+            $('.employment-card').each(function () {
+                const cardText = $(this).find('.emp-company').text().toLowerCase();
+                if (companyName && cardText.includes(companyName.toLowerCase())) {
+                    $(this).removeClass('hidden-card').show();
+                    visibleCount++;
+                } else {
+                    $(this).addClass('hidden-card').hide();
+                }
+            });
+            $('#showing-count').text(visibleCount);
+            if (visibleCount === 0) {
+                $('#no-results').fadeIn(300);
+            } else {
+                $('#no-results').hide();
+            }
+            // Remove the “active” state from all sector filter buttons
+            $('.filter-btn').removeClass('active');
+        }
+
+        
+
         // ===== DATA =====
         const skills = [
             { name: 'C#.NET', years: 13.8, width: 95 },
@@ -2150,6 +2180,13 @@
                 const sector = $(this).data('sector');
                 filterEmployment(sector);
             });
+
+            // === NEW: apply filter from ?e= URL parameter ===
+            var eParam = getUrlParameter('e');
+            if (eParam && eParam.trim() !== '') {
+                filterByCompany(eParam.trim());
+            }
+                    
         });
     </script>
 
