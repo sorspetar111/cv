@@ -1727,6 +1727,8 @@
 
         
 
+        
+
         // ===== DATA =====
         const skills = [
             { name: 'C#.NET', years: 13.8, width: 95 },
@@ -2183,8 +2185,25 @@
 
             // === NEW: apply filter from ?e= URL parameter ===
             var eParam = getUrlParameter('e');
+            var sParam = getUrlParameter('e');
             if (eParam && eParam.trim() !== '') {
                 filterByCompany(eParam.trim());
+            }
+             if (sParam && sParam.trim() !== '') {
+                // filterByCompany(sParam.trim());
+
+                const sector = sParam.trim().toLowerCase();
+                const $btn = $('.filter-btn[data-sector="' + sector + '"]');
+                if ($btn.length) {
+                    // Highlight the matching sector button
+                    $('.filter-btn').removeClass('active');
+                    $btn.addClass('active');
+                    // Apply the filter using the existing function
+                    // filterEmployment(sector);
+                    renderFilters();
+                }
+
+               
             }
                     
         });
