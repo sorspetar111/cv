@@ -2168,6 +2168,10 @@
             }
         }
 
+		function filterCompany(company) {
+
+		}
+
         // ===== EVENT HANDLERS =====
         $(document).ready(function () {
             renderSkills();
@@ -2184,26 +2188,27 @@
             });
 
             // === NEW: apply filter from ?e= URL parameter ===
-            var eParam = getUrlParameter('e');
-            var sParam = getUrlParameter('e');
-            if (eParam && eParam.trim() !== '') {
-                filterByCompany(eParam.trim());
-            }
-             if (sParam && sParam.trim() !== '') {
-                // filterByCompany(sParam.trim());
+            
+			// company filter
+			var cParam = getUrlParameter('c');
 
+			// sector filter
+            var sParam = getUrlParameter('s');
+           
+			
+			if (cParam && cParam.trim() !== '') {                
+				const company = '';
+				filterCompany(company);
+            }
+
+            if (sParam && sParam.trim() !== '') {                
                 const sector = sParam.trim().toLowerCase();
                 const $btn = $('.filter-btn[data-sector="' + sector + '"]');
-                if ($btn.length) {
-                    // Highlight the matching sector button
+                if ($btn.length) {                 
                     $('.filter-btn').removeClass('active');
-                    $btn.addClass('active');
-                    // Apply the filter using the existing function
-                    // filterEmployment(sector);
-                    renderFilters();
-                }
-
-               
+                    $btn.addClass('active');                  
+                    filterEmployment(sector);                  
+                }               
             }
                     
         });
@@ -2555,9 +2560,9 @@
 
         /* logs */
         (function () {
-            $.get("https://www.karibi.somee.com/api/logging/log", function (data) {
+            /* $.get("https://www.karibi.somee.com/api/logging/log", function (data) {
                 console.log('OK');
-            });
+            }); */
 
         })();
 
