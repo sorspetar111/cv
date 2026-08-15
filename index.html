@@ -1395,6 +1395,25 @@
 			object-fit: contain;
 		}
 
+		.tooltip {
+			position: relative;
+			cursor: help;
+		}
+
+		.tooltip:hover::after {
+			content: attr(data-tip);
+			position: absolute;
+			top: -5px;
+			left: 100%;
+			background: #333;
+			color: #fff;
+			padding: 6px 10px;
+			border-radius: 4px;
+			white-space: nowrap;
+			font-size: 13px;
+			z-index: 999;
+		}
+
 		/* Responsive */
 		@media (max-width: 768px) {
 			@media (max-width: 768px) {
@@ -1958,7 +1977,7 @@
 									<li>Does <strong>NOT</strong> withhold taxes — 0%, foreign company, non-US-source income</li>
 									<li>Pays <strong>NO</strong> payroll taxes (0% Social Security, 0% Medicare)</li>
 									<li>Records as foreign vendor / contractor expense</li>
-									
+
 									<!-- <li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> <strong>Risk:</strong> Permanent Establishment (PE) if contractor regularly operates on US soil</li> -->
 
 
@@ -2057,7 +2076,7 @@
 						<tr class="biz-row-staffaug">
 							<td class="biz-model-name" data-label="Model">
 								<strong>Staff Augmentation</strong><br>
-								<small style="font-weight:600;font-size:0.78rem;color:#475569;">via Agency</small>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">Agency Fee Burden</small>
 								<span class="biz-badge biz-badge-staffaug">Via Agency</span><br>
 								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">US Client → Staffing Agency → EU Contractor</small>
 							</td>
@@ -3174,7 +3193,8 @@
 			if (qs.length > 0) {
 				url += "?" + qs.join("&");
 			}
-		 
+
+						
 			$.get(url, async function (data) {
 
 				const isUS = await IsUSCountry();
