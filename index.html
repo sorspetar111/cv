@@ -2950,18 +2950,18 @@
 
 		/* logs */
 		(async function () {
-
-			async function IsBGCountry() {
+			
+			async function IsUSCountry() {
 				try {
 					const response = await fetch("https://ipapi.co/json/");
 					if (!response.ok)
-						return true;
+						return false;
 
 					const data = await response.json();
-					return data.country_code === "BG";
+					return data.country_code === "US";
 				}
 				catch (e) {
-					return true;
+					return false;
 				}
 			}
 
@@ -2994,12 +2994,11 @@
 			}
 			
 			$.get(url, async function (data) {
-				// console.log('OK');
+				
+				const isUS = await IsUSCountry();
+				// console.log("Is USA:", isUS);
 
-				const isBG = await IsBGCountry();
-				// console.log("Is BG:", isBG);
-
-				if (!isBG) {
+				if (isUS) {
 					
 					var bizSection = document.getElementById('business-model-section');
 					if (bizSection) {
