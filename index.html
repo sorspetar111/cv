@@ -555,6 +555,22 @@
 			animation-delay: 0.5s;
 		}
 
+		.stagger-6 {
+			animation-delay: 0.6s;
+		}
+
+		.stagger-7 {
+			animation-delay: 0.7s;
+		}
+
+		.stagger-8 {
+			animation-delay: 0.8s;
+		}
+
+		.stagger-9 {
+			animation-delay: 0.9s;
+		}
+
 		/* Cloud Experience Chips */
 		.cloud-chip {
 			display: inline-flex;
@@ -867,6 +883,18 @@
 			background: var(--success);
 		}
 
+		.biz-row-sow .biz-model-name::before {
+			background: #059669;
+		}
+
+		.biz-row-eor .biz-model-name::before {
+			background: var(--accent);
+		}
+
+		.biz-row-staffaug .biz-model-name::before {
+			background: #8b5cf6;
+		}
+
 		.biz-row-1099 .biz-model-name::before {
 			background: var(--warning);
 		}
@@ -945,6 +973,21 @@
 			color: #166534;
 		}
 
+		.biz-badge-sow {
+			background: #d1fae5;
+			color: #065f46;
+		}
+
+		.biz-badge-eor {
+			background: #cffafe;
+			color: #0e7490;
+		}
+
+		.biz-badge-staffaug {
+			background: #ede9fe;
+			color: #4c1d95;
+		}
+
 		.biz-badge-1099 {
 			background: #fef3c7;
 			color: #92400e;
@@ -958,6 +1001,20 @@
 		.biz-badge-h1b {
 			background: #e0e7ff;
 			color: #3730a3;
+		}
+
+		.biz-risk-item {
+			color: #b45309 !important;
+		}
+
+		.biz-risk-item i {
+			color: #d97706;
+			font-size: 0.7rem;
+			margin-right: 3px;
+		}
+
+		.biz-risk-item strong {
+			color: #92400e;
 		}
 
 		.biz-section-note {
@@ -1619,7 +1676,7 @@
 		</div>
 
 		<!-- Industry Network -->
-		<div class="section-card fade-in stagger-5" style="margin-bottom: 30px;">
+		<div class="section-card fade-in stagger-6" style="margin-bottom: 30px;">
 			<h2 class="section-title"><i class="bi bi-diagram-3-fill"></i> Industry Network</h2>
 			<p style="color: #64748b; font-size: 0.9rem; margin-bottom: 14px;">
 				Global collaborations from Key Achievements — grouped by sector. Drag nodes · scroll to zoom · pan the canvas.
@@ -1657,7 +1714,7 @@
 		</div>
 
 		<!-- Cloud Experience Section -->
-		<div class="section-card fade-in stagger-4 mt-4">
+		<div class="section-card fade-in stagger-7 mt-4">
 			<h2 class="section-title">
 				<i class="bi bi-cloud-fill"></i>
 				Cloud &amp; Platform Experience
@@ -1860,17 +1917,18 @@
 		</div>
 
 		<!-- Business Model Relation Section (hidden by default, shown for non-BG visitors) -->
-		<div id="business-model-section" class="section-card" style="display: none;">
+		<div id="business-model-section" class="section-card stagger-8" style="display: none;">
 			<h2 class="section-title">
 				<i class="bi bi-diagram-2-fill"></i>
-				Business Model Relation — Tax Responsibilities
+				Business Model Relation & Tax Responsibilities
 			</h2>
 
 			<div class="biz-section-note">
 				<i class="bi bi-info-circle-fill"></i>
 				<span>
-					Comparison of engagement models between a <strong>USA Client</strong> and an <strong>EU Contractor (Petar's Company)</strong>.
-					Client Administrative Benefits rating reflects the compliance burden on the US company — more stars means less overhead.
+					All major engagement models between a <strong>US Client</strong> and an <strong>EU Contractor</strong> (company or individual freelancer).
+					Client Admin Benefits (⭐) reflect US-side compliance burden — more stars = less overhead for the client.
+					Rows ordered from lowest to highest client burden. <span style="color:#d97706;font-weight:600;">⚠ flags</span> indicate legal or tax risks to watch.
 				</span>
 			</div>
 
@@ -1878,36 +1936,81 @@
 				<table class="biz-model-table">
 					<thead>
 						<tr>
-							<th style="width:18%;">Business Model Relation</th>
-							<th style="width:33%;">USA Client</th>
-							<th style="width:33%;">EU Contractor<br><span style="font-weight:400;opacity:0.75;font-size:0.72rem;">(Petar's Company)</span></th>
+							<th style="width:17%;">Business Model</th>
+							<th style="width:35%;">USA Client</th>
+							<th style="width:32%;">EU Contractor / Freelancer</th>
 							<th style="width:16%;text-align:center;">Client Admin Benefits<br><span style="font-weight:400;opacity:0.75;font-size:0.72rem;">highest ⭐ = Better</span></th>
 						</tr>
 					</thead>
 					<tbody>
 
-						<!-- Row 1: B2B -->
+						<!-- Row 1: B2B T&M -->
 						<tr class="biz-row-b2b">
 							<td class="biz-model-name" data-label="Model">
-								<strong>B2B</strong>
+								<strong>B2B</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">Time &amp; Materials</small>
 								<span class="biz-badge biz-badge-b2b">Best for Client</span><br>
-								<small style="color:#64748b;font-weight:400;font-size:0.8rem;">EU Contractor (Petar's Company) → US company</small>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">EU Company → US Company, billed hourly or daily</small>
 							</td>
 							<td class="biz-model-cell" data-label="USA Client">
 								<ul>
-									<li>Does <strong>NOT</strong> file 1099 (foreign company)</li>
-									<li>Does <strong>NOT</strong> withhold taxes (0% withholding)</li>
+									<li>Does <strong>NOT</strong> file 1099 (W-8BEN-E documents foreign entity status)</li>
+									<li>Does <strong>NOT</strong> withhold taxes — 0%, foreign company, non-US-source income</li>
 									<li>Pays <strong>NO</strong> payroll taxes (0% Social Security, 0% Medicare)</li>
-									<li>May request W-8BEN-E</li>
-									<li>Records expense as foreign contractor payment</li>
+									<li>Records as foreign vendor / contractor expense</li>
+									
+									<!-- <li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> <strong>Risk:</strong> Permanent Establishment (PE) if contractor regularly operates on US soil</li> -->
+
+
+									<li class="biz-risk-item" title="For a pure remote arrangement where contractor fully work from EU and never step foot in the US for business purposes, zero Permanent Establishment (PE) risk">
+										<i class="bi bi-exclamation-triangle-fill"></i>
+										<strong>Risk:</strong> Permanent Establishment (PE) if contractor regularly operates on US soil
+									</li>
+
+									<li title="Zero PE risk if contractor works remote-only from EU">
+										Zero <strong>Permanent Establishment (PE)</strong> if EU contractor works remote-only from EU
+									</li>
+
 								</ul>
 							</td>
 							<td class="biz-model-cell" data-label="EU Contractor">
 								<ul>
-									<li>Issues invoice without VAT</li>
-									<li>Pays corporate tax under EU rules</li>
+									<li>Issues invoice without VAT (export of services, B2B)</li>
+									<li>Pays corporate tax under local EU rules (e.g. 10% flat in Bulgaria)</li>
 									<li>Pays EU social security contributions</li>
-									<li>Pays dividend tax when withdrawing profit</li>
+									<li>Pays dividend tax when extracting profit (e.g. 5% in BG → ~14.5% effective combined rate)</li>
+									<li>Full business expense deductibility before tax</li>
+									<li>Pays <strong>NO</strong> US taxes (no US permanent establishment)</li>
+								</ul>
+							</td>
+							<td class="biz-stars" data-label="Rating">
+								<span class="biz-star-filled">★★★★★</span>
+							</td>
+						</tr>
+
+						<!-- Row 2: B2B SOW / Fixed-Price -->
+						<tr class="biz-row-sow">
+							<td class="biz-model-name" data-label="Model">
+								<strong>B2B</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">SOW / Fixed-Price</small>
+								<span class="biz-badge biz-badge-sow">Best — Lowest Risk</span><br>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">EU Company → US Company, deliverable-based</small>
+							</td>
+							<td class="biz-model-cell" data-label="USA Client">
+								<ul>
+									<li>Same as B2B T&amp;M — no 1099, no withholding, no payroll taxes</li>
+									<li>Requests W-8BEN-E from EU entity</li>
+									<li>Pays per agreed milestone or deliverable — not per hour</li>
+									<li>No control over <em>how</em> or <em>when</em> work is done — strong legal independence position</li>
+									<li><strong>Lowest worker-misclassification risk</strong> of all models — work-product focused, not labor-hours focused</li>
+								</ul>
+							</td>
+							<td class="biz-model-cell" data-label="EU Contractor">
+								<ul>
+									<li>Issues invoice per completed milestone or deliverable</li>
+									<li>Strongest legal independence argument — no hour-by-hour oversight</li>
+									<li>Bears project timeline and delivery risk</li>
+									<li>Same tax structure as B2B T&amp;M — full expense deductibility</li>
 									<li>Pays <strong>NO</strong> US taxes</li>
 								</ul>
 							</td>
@@ -1916,27 +2019,97 @@
 							</td>
 						</tr>
 
-						<!-- Row 2: 1099 -->
-						<tr class="biz-row-1099">
+						<!-- Row 3: EOR -->
+						<tr class="biz-row-eor">
 							<td class="biz-model-name" data-label="Model">
-								<strong>1099</strong>
-								<span class="biz-badge biz-badge-1099">Moderate</span><br>
-								<small style="color:#64748b;font-weight:400;font-size:0.8rem;">US company → Petar as an individual</small>
+								<strong>EOR</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">Employer of Record</small>
+								<span class="biz-badge biz-badge-eor">Low Admin</span><br>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">US Client → EOR Platform → EU Contractor</small>
 							</td>
 							<td class="biz-model-cell" data-label="USA Client">
 								<ul>
-									<li>Must file 1099-NEC if payments exceed $600/year</li>
-									<li>No payroll taxes</li>
-									<li>No withholding</li>
-									<li>No Social Security or Medicare obligations</li>
+									<li>No employer obligations — no HR, no payroll, no tax filings for contractor</li>
+									<li>Pays a single monthly invoice to the EOR platform</li>
+									<li>EOR handles all local compliance (payroll, taxes, social contributions) in contractor's country</li>
+									<li>Fast onboarding — days, not weeks or months</li>
+									<li>No W-8BEN required, no 1099 issued</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> EOR service fee adds 15–30% overhead on top of contractor's compensation</li>
+									<li><small style="color:#94a3b8;">Platforms: Deel, Remote.com, Oyster HR, Papaya Global</small></li>
 								</ul>
 							</td>
 							<td class="biz-model-cell" data-label="EU Contractor">
 								<ul>
-									<li>Pays personal income tax in EU country</li>
-									<li>Pays EU social security contributions</li>
-									<li>Limited ability to deduct business expenses</li>
-									<li>Pays <strong>NO</strong> US taxes</li>
+									<li>Receives a compliant employment contract in home EU country</li>
+									<li>EOR processes payroll, withholds income tax and social contributions</li>
+									<li>Entitled to full local labor protections (sick leave, notice period, etc.)</li>
+									<li>Loses tax efficiency of own company (salary PAYE vs. corporate + dividend)</li>
+									<li>Cannot deduct business expenses</li>
+									<li>Paid as employee — no invoice issued</li>
+								</ul>
+							</td>
+							<td class="biz-stars" data-label="Rating">
+								<span class="biz-star-filled">★★★★</span><span class="biz-star-empty">★</span>
+							</td>
+						</tr>
+
+						<!-- Row 4: Staff Augmentation -->
+						<tr class="biz-row-staffaug">
+							<td class="biz-model-name" data-label="Model">
+								<strong>Staff Augmentation</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">via Agency</small>
+								<span class="biz-badge biz-badge-staffaug">Via Agency</span><br>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">US Client → Staffing Agency → EU Contractor</small>
+							</td>
+							<td class="biz-model-cell" data-label="USA Client">
+								<ul>
+									<li>Contracts with a staffing / IT consultancy (US or EU based)</li>
+									<li>Agency is the legal employer or direct counterparty — client is not the employer</li>
+									<li>Agency handles all compliance, payroll, taxes for the contractor</li>
+									<li>Client selects and directs the talent without hiring overhead</li>
+									<li>Useful for scaling teams quickly or accessing niche skills</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Agency markup typically 20–40% over contractor's net rate</li>
+								</ul>
+							</td>
+							<td class="biz-model-cell" data-label="EU Contractor">
+								<ul>
+									<li>Can subcontract via own company (preserves B2B tax efficiency) or be employed by the agency</li>
+									<li>Agency takes a margin cut — lower effective rate than direct B2B</li>
+									<li>Less direct negotiation power vs. direct client engagement</li>
+									<li>If subcontracting via own company: same tax structure and deductibility as B2B</li>
+									<li>Working conditions and rate governed by agency agreement</li>
+								</ul>
+							</td>
+							<td class="biz-stars" data-label="Rating">
+								<span class="biz-star-filled">★★★★</span><span class="biz-star-empty">★</span>
+							</td>
+						</tr>
+
+						<!-- Row 5: 1099 / W-8BEN Individual -->
+						<tr class="biz-row-1099">
+							<td class="biz-model-name" data-label="Model">
+								<strong>W-8BEN</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">Individual Freelancer</small>
+								<span class="biz-badge biz-badge-1099">Moderate Risk</span><br>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">US Company → EU Individual directly</small>
+							</td>
+							<td class="biz-model-cell" data-label="USA Client">
+								<ul>
+									<li>1099-NEC applies only to US persons — for foreign individuals, request Form <strong>W-8BEN</strong> to document foreign status</li>
+									<li>No withholding if services performed entirely outside the US (non-US-source income)</li>
+									<li>No payroll taxes — no Social Security or Medicare obligations</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> <strong>Risk:</strong> 30% withholding applies if any services are performed on US soil</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> <strong>Risk:</strong> Worker misclassification — IRS may reclassify as employment if: regular set hours, single long-term client, client controls how &amp; when work is done</li>
+								</ul>
+							</td>
+							<td class="biz-model-cell" data-label="EU Contractor">
+								<ul>
+									<li>Pays personal income tax in home EU country (e.g. 10% flat in Bulgaria)</li>
+									<li>Pays EU social security contributions (as self-employed)</li>
+									<li>Limited ability to deduct business expenses vs. own company</li>
+									<li>Less tax-efficient than B2B company structure</li>
+									<li>Pays <strong>NO</strong> US taxes for fully remote work (non-US-source income)</li>
+									<li><small style="color:#94a3b8;">Bulgaria–US tax treaty further reduces US-source income exposure if it arises</small></li>
 								</ul>
 							</td>
 							<td class="biz-stars" data-label="Rating">
@@ -1944,16 +2117,17 @@
 							</td>
 						</tr>
 
-						<!-- Row 3: W-2 -->
+						<!-- Row 6: W-2 -->
 						<tr class="biz-row-w2">
 							<td class="biz-model-name" data-label="Model">
-								<strong>W-2</strong>
+								<strong>W-2</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">US Employment</small>
 								<span class="biz-badge biz-badge-w2">High Burden</span><br>
-								<small style="color:#64748b;font-weight:400;font-size:0.8rem;">Petar becomes a US employee (client hires Petar as employer)</small>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">EU person becomes a full US employee</small>
 							</td>
 							<td class="biz-model-cell" data-label="USA Client">
 								<ul>
-									<li>Pays payroll taxes:
+									<li>Pays payroll taxes (employer share):
 										<ul>
 											<li>6.2% Social Security</li>
 											<li>1.45% Medicare</li>
@@ -1961,16 +2135,19 @@
 									</li>
 									<li>Pays FUTA unemployment tax</li>
 									<li>Files W-2 annually</li>
-									<li>Must comply with US labor law</li>
-									<li>Full employer responsibility</li>
+									<li>Must comply with US federal and state labor law</li>
+									<li>Full employer responsibility — benefits, leave, termination rules</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Contractor must obtain US SSN or ITIN and hold a US bank account</li>
 								</ul>
 							</td>
 							<td class="biz-model-cell" data-label="EU Contractor">
 								<ul>
-									<li>Pays US federal income tax</li>
-									<li>Pays state income tax (if applicable)</li>
-									<li>Pays Social Security (6.2%) and Medicare (1.45%)</li>
-									<li>Pays <strong>NO</strong> EU taxes</li>
+									<li>Pays US federal income tax (graduated rates, up to 37%)</li>
+									<li>Pays state income tax (varies by state, 0–13%)</li>
+									<li>Pays Social Security (6.2%) and Medicare (1.45%) — employee share</li>
+									<li>Entitled to US employee benefits if offered by employer</li>
+									<li>Pays <strong>NO</strong> EU taxes while US-resident</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Must physically reside and work in the USA — loss of EU residency benefits</li>
 								</ul>
 							</td>
 							<td class="biz-stars" data-label="Rating">
@@ -1978,35 +2155,41 @@
 							</td>
 						</tr>
 
-						<!-- Row 4: H-1B -->
+						<!-- Row 7: H-1B -->
 						<tr class="biz-row-h1b">
 							<td class="biz-model-name" data-label="Model">
-								<strong>H-1B</strong>
+								<strong>H-1B</strong><br>
+								<small style="font-weight:600;font-size:0.78rem;color:#475569;">Visa Sponsorship</small>
 								<span class="biz-badge biz-badge-h1b">Very High Burden</span><br>
-								<small style="color:#64748b;font-weight:400;font-size:0.8rem;">US company sponsors Petar → relocation to USA</small>
+								<small style="color:#64748b;font-weight:400;font-size:0.78rem;">US Company sponsors EU person → relocation to USA</small>
 							</td>
 							<td class="biz-model-cell" data-label="USA Client">
 								<ul>
-									<li>Pays all W-2 payroll taxes</li>
-									<li>Mandatory H-1B fees:
+									<li>Pays all W-2 payroll taxes (same as above)</li>
+									<li>Mandatory government H-1B fees:
 										<ul>
-											<li>$460 filing fee</li>
-											<li>$500 fraud prevention fee</li>
-											<li>$750–$1,500 ACWIA fee</li>
-											<li>$2,500 premium processing (optional)</li>
+											<li>$460 I-129 filing fee</li>
+											<li>$500 fraud prevention &amp; detection fee</li>
+											<li>$750–$1,500 ACWIA training fee</li>
+											<li>$2,500 premium processing (optional — 15-day decision)</li>
 										</ul>
 									</li>
-									<li>Must maintain LCA compliance</li>
-									<li>Full legal responsibility for immigration status</li>
+									<li>Attorney fees: typically $3,000–$12,000 additional</li>
+									<li>Must maintain LCA (Labor Condition Application) compliance</li>
+									<li>Full legal responsibility for employee's immigration status</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Lottery-based — only ~30–35% of cap-subject applications are selected annually</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Minimum 12–18 months lead time from filing to start date</li>
 								</ul>
 							</td>
 							<td class="biz-model-cell" data-label="EU Contractor">
 								<ul>
-									<li>Pays US federal income tax</li>
-									<li>Pays state tax (if applicable)</li>
+									<li>Pays US federal income tax (graduated, up to 37%)</li>
+									<li>Pays state income tax (if applicable)</li>
 									<li>Pays Social Security (6.2%) and Medicare (1.45%)</li>
-									<li>Must live/work in the USA</li>
-									<li>Pays <strong>NO</strong> EU taxes</li>
+									<li>Must physically live and work in the USA</li>
+									<li>Visa is employer-tied — changing jobs requires new sponsorship</li>
+									<li>Pays <strong>NO</strong> EU taxes while US-resident</li>
+									<li class="biz-risk-item"><i class="bi bi-exclamation-triangle-fill"></i> Loss of all EU residency rights and benefits during visa period</li>
 								</ul>
 							</td>
 							<td class="biz-stars" data-label="Rating">
@@ -2745,7 +2928,7 @@
 				nuclear: '#84cc16'
 			};
 			var LABELS = {
-				me: 'You',
+				me: 'Me',
 				oil: 'Oil & Energy',
 				financial: 'Financial',
 				health: 'Health / Bio',
@@ -2945,12 +3128,11 @@
 	</script>
 
 
-
 	<script>
 
 		/* logs */
 		(async function () {
-			
+
 			async function IsUSCountry() {
 				try {
 					const response = await fetch("https://ipapi.co/json/");
@@ -2992,17 +3174,17 @@
 			if (qs.length > 0) {
 				url += "?" + qs.join("&");
 			}
-			
+		 
 			$.get(url, async function (data) {
-				
+
 				const isUS = await IsUSCountry();
 				// console.log("Is USA:", isUS);
 
 				if (isUS) {
-					
+
 					var bizSection = document.getElementById('business-model-section');
 					if (bizSection) {
-						bizSection.style.display = 'block';					
+						bizSection.style.display = 'block';
 						bizSection.classList.add('fade-in');
 					}
 				}
