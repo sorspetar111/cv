@@ -3201,6 +3201,20 @@
 				}
 			}
 
+			async function IsBGCountry() {
+                try {
+                    const response = await fetch("https://ipapi.co/json/");
+                    if (!response.ok)
+                        return false;
+
+                    const data = await response.json();
+                    return data.country_code === "BG";
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+
 
 			// company filter
 			// var cParam = getUrlParameter('c');
@@ -3232,10 +3246,12 @@
 						
 			$.post(url, async function (data) {
 
-				const isUS = await IsUSCountry();
+				// const isUS = await IsUSCountry();
 				// console.log("Is USA:", isUS);
 
-				if (isUS) {
+				const isBG = await IsBGCountry();
+
+				if (!isBG) {
 
 					var bizSection = document.getElementById('business-model-section');
 					if (bizSection) {
