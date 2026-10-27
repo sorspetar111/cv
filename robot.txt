@@ -22,7 +22,12 @@ Disallow: /
 User-agent: bingbot
 Disallow: /
 
+# Out of AI training, still in search
+User-agent: Google-Extended
+Disallow: /
 
+User-agent: Applebot-Extended
+Disallow: /
 
 
 
