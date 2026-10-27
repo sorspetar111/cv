@@ -10,3 +10,20 @@ Disallow: /
 User-agent: Googlebot
 Disallow: /
 
+User-agent: Applebot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+
+
+
+
+
+
